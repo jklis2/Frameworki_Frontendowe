@@ -1,0 +1,7 @@
+html{
+    background: rgb(255,193,7);
+    background: -moz-linear-gradient(122deg, rgba(255,193,7,1) 0%, rgba(233,30,99,1) 50%, rgba(76,175,80,1) 100%);
+    background: -webkit-linear-gradient(122deg, rgba(255,193,7,1) 0%, rgba(233,30,99,1) 50%, rgba(76,175,80,1) 100%);
+    background: linear-gradient(122deg, rgba(255,193,7,1) 0%, rgba(233,30,99,1) 50%, rgba(76,175,80,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffc107",endColorstr="#4caf50",GradientType=1);
+}
