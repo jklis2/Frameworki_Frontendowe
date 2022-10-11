@@ -1,9 +1,9 @@
 import React from "react";
-import Form from "./Component/tsx/Form";
+import LoginForm from "./Component/tsx/LoginForm";
 
 const Login = () => {
     return(
-        <Form></Form>
+        <LoginForm></LoginForm>
 )
 }
 

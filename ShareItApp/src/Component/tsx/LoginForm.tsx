@@ -1,7 +1,7 @@
 import React from "react";
-import "../css/Form.css"
+import "../css/LoginForm.css"
 
-const Form = () => {
+const LoginForm = () => {
     return(
         <div>
             <div className="container">
@@ -20,7 +20,7 @@ const Form = () => {
         <div className="overlay-panel overlay-right">
             <h1>Sign UP</h1>
             <p>Sign up here if you don't have account.</p>
-            <button className="signup_btn">Sign Up</button>
+            <button className="signup_btn"><a href="/Register">Sign Up</a></button>
         </div>
     </div>
 </div>
@@ -29,4 +29,4 @@ const Form = () => {
     )
 }
 
-export default Form
+export default LoginForm
