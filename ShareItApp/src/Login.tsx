@@ -1,9 +1,10 @@
 import React from "react";
+import Form from "./Component/tsx/Form";
 
 const Login = () => {
     return(
-        <div>Formularz do logowania</div>
-    )
+        <Form></Form>
+)
 }
 
 export default Login
