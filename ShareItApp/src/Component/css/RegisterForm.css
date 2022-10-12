@@ -16,14 +16,13 @@ body {
 	align-items: center;
 	flex-direction: column;
 	font-family: 'Raleway', sans-serif;
-	height: 96vh;
+	height: 100vh;
 	margin: -20px 0 50px;
 }
 
 .register h1 {
 	font-weight: bold;
 	margin: 0;
-	padding: 20px;
 }
 
 .register h2 {
@@ -38,7 +37,7 @@ body {
 }
 
 .register a {
-    color: #FFFFFF;
+	color: #333;
 	font-size: 14px;
 	text-decoration: none;
 	margin: 15px 0;
@@ -92,6 +91,8 @@ body {
 	position: relative;
 	overflow: hidden;
 	width: 30vw;
+	max-width: 100%;
+	min-height: 480px;
 }
 
 .register .form {
@@ -101,5 +102,15 @@ body {
 }
 
 .register .sign-up-container {
+	left: 0;
 	width: 100%;
+}
+
+.register .overlay-container {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
 }
