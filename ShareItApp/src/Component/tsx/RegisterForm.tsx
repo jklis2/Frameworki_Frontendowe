@@ -3,7 +3,7 @@ import "../css/RegisterForm.css"
 
 const RegisterForm = () => {
     return(
-        <div>
+        <div className="register">
             <div className="container">
 	<div className="form sign-up-container">
 		<form action="#">
