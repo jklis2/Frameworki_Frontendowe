@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+import React, {FC ,useEffect } from "react";
 import { useState } from "react";
 import User from "./Entities/Users";
+import Header from "./Component/tsx/Header";
+import "./Component/css/Home.css"
 
-const WelcomePage = () => {
+const Home: FC = () => {
 
     const [data, setData] = useState<Array<User>>([])
     
@@ -17,7 +19,9 @@ useEffect(() => {
 }, [])   
     
     return(
-    <div> 
+    <div className="testtest"> 
+        <Header/>
+
         {data.map((items) => {
             return (
                 <div key={items.id}> {items.username}</div>
@@ -28,4 +32,4 @@ useEffect(() => {
     )
 }
 
-export default WelcomePage
+export default Home
