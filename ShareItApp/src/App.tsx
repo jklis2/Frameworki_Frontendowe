@@ -3,7 +3,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom"
 import Login from './Login';
 import WelcomePage from './WelcomePage';
 import Register from './Register';
-import './Component/css/main.css';
+import './Component/css/Main.css';
 
 function App() {
   return (
