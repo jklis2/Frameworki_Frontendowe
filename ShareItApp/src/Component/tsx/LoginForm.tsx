@@ -3,14 +3,14 @@ import "../css/LoginForm.css"
 
 const LoginForm = () => {
     return(
-        <div>
+<div className="login">
             <div className="container">
 	<div className="form sign-in-container">
 		<form action="#">
 			<h1>Sign in</h1>
 			<input type="email" placeholder="User Email"/>
 			<input type="password" placeholder="Password"/>
-			<a href="https://rpbloggers.com/">Forgot your password?</a>
+			<a href="#">Forgot your password?</a>
 			<button>Sign In</button>
 		</form>
 	</div>
@@ -24,8 +24,8 @@ const LoginForm = () => {
         </div>
     </div>
 </div>
+    </div>
 </div>
-        </div>
     )
 }
 
