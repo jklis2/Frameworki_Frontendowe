@@ -21,7 +21,6 @@
 
 .register h1 {
 	font-weight: bold;
-	margin: 0;
 }
 
 .register h2 {
@@ -79,7 +78,7 @@
 	border: none;
 	padding: 12px 15px;
 	margin: 8px 0;
-	width: 100%;
+	width: 90%;
 }
 
 .register .container {
@@ -89,9 +88,10 @@
 			0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
 	overflow: hidden;
-	width: 30vw;
+	width: 80vw;
 	max-width: 100%;
-	min-height: 480px;
+	min-height: 75vh;
+
 }
 
 .register .form {
@@ -105,6 +105,18 @@
 	width: 100%;
 }
 
+.register .personalData {
+	width: 30%;
+}
+
+.register .address {
+	width: 30%;
+}
+
+.register .company {
+	width: 30%;
+}
+
 .register .overlay-container {
 	position: absolute;
 	top: 0;
@@ -112,4 +124,9 @@
 	width: 50%;
 	height: 100%;
 	overflow: hidden;
+}
+
+.register .forms{
+	display: flex;
+	justify-content: space-between;
 }
