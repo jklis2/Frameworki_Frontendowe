@@ -1,6 +1,6 @@
 import React, {FC} from "react";
-import Header from "./Component/tsx/Header";
-import "./Component/css/Home.css"
+import Header from "../Component/tsx/Header";
+import "../Component/css/Home.css"
 
 const Home: FC = () => {
 
@@ -12,7 +12,7 @@ const Home: FC = () => {
             <div className="welcome-container"> 
                 <div className="welcome-content">
                     <div className="welcome-photo">
-                       <img src={`${process.env.PUBLIC_URL}/img/Welcome_photo.jpg`} alt="Welcome photo"/>
+                       <img src={`${process.env.PUBLIC_URL}/img/Welcome_photo.jpg`} alt="Welcome"/>
                     </div>
                     <div className="welcome-text">
                         <div> <h2>Welcome on our Page!</h2> </div>

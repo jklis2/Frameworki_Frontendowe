@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
-import User from "./Entities/Users";
-import Header from "./Component/tsx/Header";
+import User from "../Entities/Users";
+import Header from "../Component/tsx/Header";
 
 const SearchUser : FC = () => {
 
