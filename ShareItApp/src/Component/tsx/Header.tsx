@@ -10,6 +10,7 @@ const Header = () => {
         <Container className="navbar-container">
           <Navbar.Brand href="#home">
             <img src={`${process.env.PUBLIC_URL}/img/Logo.png`} alt="Logo ShareItNow"/>
+            Share It Now
           </Navbar.Brand>
           <Nav className="ms-auto">
             <Nav.Link href="#home">Menu</Nav.Link>

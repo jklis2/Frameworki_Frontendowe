@@ -19,15 +19,33 @@ useEffect(() => {
 }, [])   
     
     return(
-    <div className="testtest"> 
-        <Header/>
+        <div>
+            <Header/>
+            <div className="welcone-container"> 
+                <div className="welcone-content">
+                    <div className="welcome-photo">
+                        1233
+                    </div>
+                    <div className="welcome-text">
+                        <div> <h2>Welcome on our Page!</h2> </div>
+                        <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Eos iusto asperiores magni, nemo tempora dolore reprehenderit vitae dolores vel,
+                             non harum in expedita earum sit fugiat provident! Blanditiis, ducimus iste.
+                        </div>
+                    </div>
+                </div>
 
+            
+
+    {/* Data from api */}
+    {/* 
         {data.map((items) => {
             return (
                 <div key={items.id}> {items.username}</div>
             )
-        })}
-    </div>
+        })} */}
+            </div>
+        </div>
 
     )
 }

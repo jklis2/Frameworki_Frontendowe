@@ -1,3 +1,28 @@
-.testtest{
-    height: 100vh;
+.welcone-container{
+    height: 85.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcone-content{
+    background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	overflow: hidden;
+	width: 70vw;
+	min-height: 480px;
+    display: flex;
+    flex-direction: row;
+}
+
+.welcome-photo{
+    left: 0;
+    width: 60%;
+    padding: 2rem;
+}
+.welcome-text{
+    width: 40%;
+    padding: 2rem;
 }
