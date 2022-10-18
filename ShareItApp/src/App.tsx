@@ -5,6 +5,7 @@ import Home from './Home';
 import Register from './Register';
 import './Component/css/Main.css';
 import Dashboard from './Dashboard';
+import SearchUser from './SearchUser';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/Login' element={<Login/>}></Route>
         <Route path='/Register' element={<Register/>}></Route>
         <Route path='/Dashboard' element={<Dashboard/>}></Route>
+        <Route path='/Users' element={<SearchUser/>}></Route>
       </Routes>
     </BrowserRouter>
   );
