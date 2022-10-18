@@ -1,11 +1,11 @@
-.welcone-container{
+.welcome-container{
     height: 85.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.welcone-content{
+.welcome-content{
     background-color: #fff;
 	border-radius: 10px;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
@@ -22,7 +22,39 @@
     width: 60%;
     padding: 2rem;
 }
+
+.welcome-photo img{
+    height: 100%;
+    width: 100%;
+}
+
 .welcome-text{
     width: 40%;
     padding: 2rem;
+}
+
+.welcome-button{
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-button a {
+	border-radius: 20px;
+	border: 1px solid var(--primary-color);
+	background-color: var(--secondary-color);
+    text-decoration: none;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.welcome-button button:hover {
+    text-decoration: none;
+    color: #FFFFFF;
+	transform: scale(1.05);
 }

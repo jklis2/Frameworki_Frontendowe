@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 import "../css/RegisterForm.css"
 
-const RegisterForm = () => {
+const RegisterForm: FC = () => {
     return(
         <div className="register">
             <div className="container">

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { FC } from "react";
 import "../css/Header.css"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-const Header = () => {
+const Header: FC = () => {
     return (<div>
       <Navbar className="navbar" bg="dark" variant="dark">
         <Container className="navbar-container">
