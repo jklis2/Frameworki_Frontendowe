@@ -36,7 +36,10 @@ const RegisterForm = () => {
 			</div>
 			</div>
 			
-			<button>Sign Up</button>
+			<div className="actions">
+				<button>Sign Up</button>
+				<button><a href="/Login">Back to login</a></button>
+			</div>
 		</form>
 	</div>
 </div>
