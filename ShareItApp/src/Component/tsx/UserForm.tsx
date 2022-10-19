@@ -1,4 +1,5 @@
 import React, { FC, useState } from "react";
+import "../css/UserForm.css"
 
 const UserForm: FC = (props : any) => {
   const [user, setUser] = useState('');
@@ -14,7 +15,7 @@ const UserForm: FC = (props : any) => {
   }
 
   return (
-    <div>
+    <div className="form-container d-flex justify-content-center">
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Type name of user" value={user} onChange={hadleChange}></input>
         <button type="submit">Search</button>

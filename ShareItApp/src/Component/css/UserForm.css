@@ -1,0 +1,16 @@
+.form-container{
+    padding: 1.5rem;
+}
+
+.form-container input[type=text]{
+    
+}
+.form-container input:focus[type=text]{
+    border: 0;
+    outline:0;
+}
+.form-container button{
+    border: 0;
+    outline: 0;
+    margin-left: 5px;
+}

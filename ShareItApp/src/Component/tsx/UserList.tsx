@@ -1,17 +1,24 @@
 import React from "react";
+import "../css/UserList.css";
+import { Card } from "react-bootstrap";
 
 const UserList = (props: any) => {
   return (
-    <div>
-      <div>
+    <div className="d-flex flex-wrap">    
         {props.items.map((user: any) => {
           return (
-            <div key={user.id}>
-              {user.name} {user.username}
-            </div>
+            <Card border="info" className="list text-center">
+              <Card.Header>{user.username}</Card.Header>
+              <Card.Body>
+                <Card.Title>{user.name}</Card.Title>
+                <Card.Text>
+                    Info about user
+                </Card.Text>
+              </Card.Body>
+            </Card>
           );
         })}
-      </div>
+     
     </div>
   );
 };
