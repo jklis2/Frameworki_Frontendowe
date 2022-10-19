@@ -1,17 +1,19 @@
 import React, { FC, useState } from "react";
 import "../css/UserForm.css";
 
-const UserForm: FC = (props: any) => {
-  const [user, setUser] = useState("");
+interface Props {
+  user: string;
+  setUser(user: string) : void
+}
 
+const UserForm: FC<Props> = (props: any) => {
   const hadleChange = (event: any) => {
-    console.log(event.target.value);
-    setUser(event.target.value);
+    props.setUser(event.target.value);
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(user);
+    console.log(props.user);
   };
 
   return (
@@ -20,7 +22,7 @@ const UserForm: FC = (props: any) => {
         <input
           type="text"
           placeholder="Type name of user"
-          value={user}
+          value={props.user}
           onChange={hadleChange}
         ></input>
         <button type="submit">Search</button>

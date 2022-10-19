@@ -6,6 +6,7 @@ import UserList from "../Component/tsx/UserList";
 
 const SearchUser: FC = () => {
   const [data, setData] = useState<Array<User>>([]);
+  const [user, setUser] = useState<string>("");
 
   const fetchData = async () => {
     const request = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -21,7 +22,7 @@ const SearchUser: FC = () => {
     <div>
       <Header></Header>
       <div>
-        <UserForm />
+        <UserForm user = {user} setUser = {setUser}/>
         <UserList items={data} />
       </div>
     </div>
