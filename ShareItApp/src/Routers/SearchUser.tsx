@@ -17,11 +17,6 @@ const SearchUser: FC = () => {
     fetchData();
   }, []);
 
-  const getValue = (val: Array<User>) => {
-    const filterdUsers = data.filter(name => name.username.includes(val.toString()))
-    setData(filterdUsers)
-  }
-
   return (
     <div>
       <Header></Header>

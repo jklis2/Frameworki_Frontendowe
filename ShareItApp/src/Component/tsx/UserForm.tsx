@@ -4,6 +4,7 @@ const UserForm: FC = (props : any) => {
   const [user, setUser] = useState('');
 
   const hadleChange = (event : any) => {
+        console.log(event.target.value)
         setUser(event.target.value)
   }
 
