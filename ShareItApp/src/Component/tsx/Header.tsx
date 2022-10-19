@@ -16,8 +16,8 @@ const Header: FC = () => {
           </Navbar.Brand>
           <Nav className="ms-auto">
             <Nav.Link href="#home">Menu</Nav.Link>
-            <Nav.Link href="#features">Search User</Nav.Link>
-            <Nav.Link href="#features">Search Photo</Nav.Link>
+            <Nav.Link href="/Users">Search User</Nav.Link>
+            <Nav.Link href="/Photos">Search Photo</Nav.Link>
             <Nav.Link href="/Login">Login/Logout</Nav.Link>
           </Nav>
         </Container>
