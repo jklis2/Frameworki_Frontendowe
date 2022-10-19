@@ -9,8 +9,10 @@ const Header: FC = () => {
       <Navbar className="navbar" bg="dark" variant="dark">
         <Container className="navbar-container">
           <Navbar.Brand href="#home">
-            <img src={`${process.env.PUBLIC_URL}/img/Logo.png`} alt="Logo ShareItNow"/>
-            Share It Now
+            <div className="logo-text">
+                <img src={`${process.env.PUBLIC_URL}/img/Logo.png`} alt="Logo ShareItNow"/>
+                <h1>Share It Now</h1>
+            </div>
           </Navbar.Brand>
           <Nav className="ms-auto">
             <Nav.Link href="#home">Menu</Nav.Link>
