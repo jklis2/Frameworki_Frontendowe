@@ -1,6 +1,6 @@
 .dashboard-container{
     height: 100vh;
-    width: 100%;
+    width: 100vw;
 }
 
 .dashboard-left-menu {
@@ -13,8 +13,20 @@
 			0 10px 10px rgba(0,0,0,0.22);
 	overflow: hidden;
     padding: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-left-menu img {
+    width: 100%;
+    height: 25vh;
+}
+
+.user-info{
+    display: flex;
+    flex-direction: row;
 }
 
 .dashboard-content {
-
+    display: none;
 }

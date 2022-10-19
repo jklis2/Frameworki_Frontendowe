@@ -2,9 +2,7 @@ import React, { FC } from "react";
 import LoginForm from "../Component/tsx/LoginForm";
 
 const Login: FC = () => {
-    return(
-        <LoginForm></LoginForm>
-)
-}
+  return <LoginForm></LoginForm>;
+};
 
-export default Login
+export default Login;

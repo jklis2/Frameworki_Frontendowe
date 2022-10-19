@@ -21,8 +21,8 @@ const SearchUser: FC = () => {
     <div>
       <Header></Header>
       <div>
-        <UserForm/>
-        <UserList items={data}/>
+        <UserForm />
+        <UserList items={data} />
       </div>
     </div>
   );

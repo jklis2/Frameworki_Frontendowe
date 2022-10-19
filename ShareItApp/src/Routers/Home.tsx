@@ -55,9 +55,9 @@ const Home: FC = () => {
             </div>
             <div>
               {" "}
-              We are a new startup promoting human relations. 
-              We value family, friendship and memories. 
-              Do you want to share a memory, photo or moment with your friends? Join us!
+              We are a new startup promoting human relations. We value family,
+              friendship and memories. Do you want to share a memory, photo or
+              moment with your friends? Join us!
             </div>
             <div className="welcome-button">
               <a href="/Register">Join to us!</a>
