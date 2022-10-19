@@ -10,7 +10,7 @@ const LoginForm: FC = () => {
             <h1>Sign in</h1>
             <input type="email" placeholder="User Email" />
             <input type="password" placeholder="Password" />
-            <a href="#">Forgot your password?</a>
+            <a href="/">Forgot your password?</a>
             <button>Sign In</button>
           </form>
         </div>
