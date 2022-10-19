@@ -7,7 +7,7 @@ const UserList = (props: any) => {
     <div className="d-flex flex-wrap">    
         {props.items.map((user: any) => {
           return (
-            <Card border="info" className="list text-center">
+            <Card key={user.id} border="info" className="list text-center">
               <Card.Header>{user.username}</Card.Header>
               <Card.Body>
                 <Card.Title>{user.name}</Card.Title>

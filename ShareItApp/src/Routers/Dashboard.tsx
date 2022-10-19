@@ -6,9 +6,11 @@ import Header from "../Component/tsx/Header";
 const Dashboard: FC = () => {
 
     return(
-        <div>
+        <div className="dashboard-container">
             <Header/>
+            <div className="dashboard-left-menu "></div>
         </div>
     )
+    // ImUserTie
 }
 export default Dashboard
