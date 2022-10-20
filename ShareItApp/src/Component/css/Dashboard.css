@@ -48,12 +48,22 @@
 
 }
 
-.dashboard-left-menu-button{
+.dashboard-left-menu-button button{
     display: flex;
     flex-direction: column-reverse;
     margin:  auto;
+    border-radius: 20px;
+	border: 1px solid var(--primary-color);
+	background-color: var(--secondary-color);
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	text-transform: uppercase;
+	cursor: pointer;
 
 }
+
 
 .user-data{
     display: flex;

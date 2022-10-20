@@ -38,7 +38,7 @@
 	color: #fff;
 }
 
-.register button,a {
+.register button,.register a {
 	border-radius: 20px;
 	border: 1px solid var(--primary-color);
 	background-color: var(--secondary-color);
