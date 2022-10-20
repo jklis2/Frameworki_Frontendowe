@@ -6,7 +6,28 @@
     outline:0;
 }
 .form-container button{
-    border: 0;
     outline: 0;
     margin-left: 5px;
+    border-radius: 20px;
+	border: 1px solid var(--primary-color);
+	background-color: var(--secondary-color);
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	text-transform: uppercase;
+	cursor: pointer;
 }
+
+.input-search{
+    outline: 0;
+    margin-left: 5px;
+    border-radius: 20px;
+	border: 1px solid var(--primary-color);
+	background-color: #FFFFFF;
+	color: black;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+}
+

@@ -19,7 +19,7 @@ const UserForm: FC<Props> = (props: any) => {
   return (
     <div className="form-container d-flex justify-content-center">
       <form onSubmit={handleSubmit}>
-        <input
+        <input className="input-search"
           type="text"
           placeholder="Type name of user"
           value={props.user}
