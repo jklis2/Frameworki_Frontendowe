@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import {BrowserRouter as Router, Link} from 'react-router-dom';
 import "../css/RegisterForm.css";
 
 const RegisterForm: FC = () => {
@@ -12,47 +13,61 @@ const RegisterForm: FC = () => {
                 {/* S U */}
                <h1>Sign UP</h1>
               </div>
-              <div className="personal-data">
-                <div className="personal-data-text">
-                  {/* U I */}
+              <div className="data-container">
+                <div className="personal">
+                  <div className="personal-text">
+                    <h2>User Information</h2>
+                    {/* U I */}
+                  </div>
+                  <div className="personal-form">
+                    <input type="text" placeholder="Name" />
+                    <input type="text" placeholder="Surname" />
+                    <input type="text" placeholder="Username" />
+                    <input type="email" placeholder="User Email" />
+                    <input type="text" placeholder="Phone" />
+                    <input type="password" placeholder="Password" />
+                  </div>
                 </div>
-                <div className="personal-data-form">
-                  <input type="text" placeholder="Name" />
-                  <input type="text" placeholder="Surname" />
-                  <input type="text" placeholder="Username" />
-                  <input type="email" placeholder="User Email" />
-                  <input type="text" placeholder="Phone" />
-                  <input type="password" placeholder="Password" />
+                <div className="address">
+                  <div className="address-text">
+                    <h2>User address</h2>
+                    {/* U A */}
+                  </div>
+                  <div className="address-form">
+                    <input type="text" placeholder="Street" />
+                    <input type="text" placeholder="Suite" />
+                    <input type="text" placeholder="City" />
+                    <input type="text" placeholder="Zipcode" />
+                  </div>
+                  <button>Sign Up</button>
                 </div>
-              </div>
-              <div className="address">
-                <div className="address-text">
-                  {/* U A */}
+                <div className="company">
+                  <div className="company-text">
+                    <h2>User company</h2>
+                    {/* U C */}
+                  </div>
+                  <div className="company-form">
+                    <input type="text" placeholder="Website" />
+                    <input type="text" placeholder="Company Name" />
+                    <input type="text" placeholder="Catch Phrase" />
+                    <input type="text" placeholder="Bs" />
+                  </div>
+                  <a href="/Login" type="button" className="button">Back to login</a>
+                  
                 </div>
-                <div className="address-form">
-                  <input type="text" placeholder="Street" />
-                  <input type="text" placeholder="Suite" />
-                  <input type="text" placeholder="City" />
-                  <input type="text" placeholder="Zipcode" />
-                </div>
-              </div>
-              <div className="company">
-                <div className="company-text">
-                  {/* U C */}
-                </div>
-                <div className="company-form">
-                  <input type="text" placeholder="Website" />
-                  <input type="text" placeholder="Company Name" />
-                  <input type="text" placeholder="Catch Phrase" />
-                  <input type="text" placeholder="Bs" />
-                </div>
+                {/* <div className="actions">
+                  <button>Sign Up</button>
+                  <button>
+                    <a href="/Login">Back to login</a>
+                  </button>
+                </div> */}
               </div>
 
             </div>
 
 
 
-            <div className="forms">
+            {/* <div className="forms">
               
 
               
@@ -60,14 +75,9 @@ const RegisterForm: FC = () => {
               {/* Ask about geo */}
 
               
-            </div>
+            {/*</div> */}
 
-            <div className="actions">
-              <button>Sign Up</button>
-              <button>
-                <a href="/Login">Back to login</a>
-              </button>
-            </div>
+            
           </form>
         </div>
       </div>

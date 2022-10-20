@@ -38,7 +38,7 @@
 	color: #fff;
 }
 
-.register button {
+.register button,a {
 	border-radius: 20px;
 	border: 1px solid var(--primary-color);
 	background-color: var(--secondary-color);
@@ -53,8 +53,15 @@
 .register button:hover {
 	transform: scale(1.05);
 }
+.register a:hover {
+	transform: scale(1.05);
+}
 
 .register button.signup_btn {
+	background-color: transparent;
+	border-color: #FFFFFF;
+}
+.register a.signup_btn {
 	background-color: transparent;
 	border-color: #FFFFFF;
 }
@@ -141,22 +148,31 @@
 }
 
 .sign-up-text{
+	width: 100%;
+}
+.data-container{
+	display: flex;
+	flex-direction: row;
+}
+
+.personal{
+	width: 33%;
+	display: flex;
+	flex-direction: column;
+}
+
+.personal-text{
 
 }
 
-.personal-data{
-
-}
-
-.personal-data-text{
-
-}
-
-.personal-data-form{
+.personal-form{
 
 }
 
 .address{
+	width: 33%;	
+	display: flex;
+	flex-direction: column;
 
 }
 
@@ -169,6 +185,9 @@
 }
 
 .company{
+	width: 33%;
+	display: flex;
+	flex-direction: column;
 
 }
 
