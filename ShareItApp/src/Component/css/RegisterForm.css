@@ -48,6 +48,9 @@
 	padding: 12px 45px;
 	text-transform: uppercase;
 	cursor: pointer;
+	width: 20vw;
+	margin-left: 15px;
+	margin-top: 45px;
 }
 
 .register button:hover {
@@ -139,34 +142,19 @@
 
 }
 
-.register{
-
-}
-
-.register-form{
-
-}
-
 .sign-up-text{
 	width: 100%;
 }
 .data-container{
 	display: flex;
 	flex-direction: row;
+	margin-left: 50px;
 }
 
 .personal{
 	width: 33%;
 	display: flex;
 	flex-direction: column;
-}
-
-.personal-text{
-
-}
-
-.personal-form{
-
 }
 
 .address{
@@ -176,25 +164,9 @@
 
 }
 
-.address-text{
-
-}
-
-.address-form{
-
-}
-
 .company{
 	width: 33%;
 	display: flex;
 	flex-direction: column;
 
-}
-
-.company-text{
-
-}
-
-.company-form{
-	
 }

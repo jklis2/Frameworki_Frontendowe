@@ -16,7 +16,7 @@ const RegisterForm: FC = () => {
               <div className="data-container">
                 <div className="personal">
                   <div className="personal-text">
-                    <h2>User Information</h2>
+                    <h2>User information</h2>
                     {/* U I */}
                   </div>
                   <div className="personal-form">
@@ -39,7 +39,7 @@ const RegisterForm: FC = () => {
                     <input type="text" placeholder="City" />
                     <input type="text" placeholder="Zipcode" />
                   </div>
-                  <button>Sign Up</button>
+                  <a href="/Login" type="button" className="button">Back to login</a>
                 </div>
                 <div className="company">
                   <div className="company-text">
@@ -52,7 +52,7 @@ const RegisterForm: FC = () => {
                     <input type="text" placeholder="Catch Phrase" />
                     <input type="text" placeholder="Bs" />
                   </div>
-                  <a href="/Login" type="button" className="button">Back to login</a>
+                  <button>Sign Up</button>
                   
                 </div>
                 {/* <div className="actions">
