@@ -59,9 +59,11 @@ const Home: FC = () => {
               friendship and memories. Do you want to share a memory, photo or
               moment with your friends? Join us!
             </div>
-            <div className="welcome-button">
-              <a href="/Register">Join to us!</a>
-            </div>
+            <a className="welcome-button-a" href="/Register">
+              <div className="welcome-button">
+                <span>Join to us!</span>
+              </div>
+            </a>
           </div>
         </div>
       </div>

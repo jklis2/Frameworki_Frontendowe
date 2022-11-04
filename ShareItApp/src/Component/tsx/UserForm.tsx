@@ -30,7 +30,7 @@ const UserForm: FC<Props> = (props: any) => {
           value={props.user}
           onChange={handleChange}
         ></input>
-        <button type="submit">Search</button>
+        {/* <button type="submit">Search</button> */}
       </form>
     </div>
   );

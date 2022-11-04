@@ -37,15 +37,20 @@
     margin-top: 13vh;
 }
 
+.welcome-button-a{
+    text-decoration: none;
+}
+
 .welcome-button{
     padding: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
+    text-decoration: none;
 }
 
-.welcome-button a {
+.welcome-button  {
 	border-radius: 20px;
 	border: 1px solid var(--primary-color);
 	background-color: var(--secondary-color);

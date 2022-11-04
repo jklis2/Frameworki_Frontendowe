@@ -20,9 +20,11 @@ const LoginForm: FC = () => {
             <div className="overlay-panel overlay-right">
               <h1>Sign UP</h1>
               <p>Sign up here if you don't have account.</p>
-              <button className="signup_btn">
-                <a href="/Register">Sign Up</a>
-              </button>
+              <a href="/Register">
+                <button className="signup_btn">
+                  Sign Up
+                </button>
+              </a>
             </div>
           </div>
         </div>

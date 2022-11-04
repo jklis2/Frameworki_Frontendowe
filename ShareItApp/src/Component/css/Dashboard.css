@@ -47,7 +47,9 @@
     width: 45%;
 
 }
-
+.dashboard-left-menu-button-a{
+    text-decoration: none;
+}
 .dashboard-left-menu-button button{
     display: flex;
     flex-direction: column-reverse;
@@ -56,6 +58,7 @@
 	border: 1px solid var(--primary-color);
 	background-color: var(--secondary-color);
 	color: #FFFFFF;
+    text-decoration: none;
 	font-size: 12px;
 	font-weight: bold;
 	padding: 12px 45px;

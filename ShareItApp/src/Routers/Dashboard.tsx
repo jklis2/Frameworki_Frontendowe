@@ -37,7 +37,9 @@ const Dashboard: FC = () => {
         </div>
       </div>
         <div className="dashboard-left-menu-button">
+      <a className="dashboard-left-menu-button-a" href="#">
           <button>Edit profile</button>
+      </a>
         </div>
       </div>
     </div>
