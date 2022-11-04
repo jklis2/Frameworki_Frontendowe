@@ -6,6 +6,7 @@ import Register from './Routers/Register';
 import './Component/css/Main.css';
 import Dashboard from './Routers/Dashboard';
 import SearchUser from './Routers/SearchUser';
+import SearchPhotos from './Routers/SearchPhotos';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/Login' element={<Login/>}></Route>
         <Route path='/Register' element={<Register/>}></Route>
         <Route path='/Dashboard' element={<Dashboard/>}></Route>
+        <Route path='/Photos' element={<SearchPhotos/>}></Route>
         <Route path='/Users' element={<SearchUser/>}></Route>
       </Routes>
     </BrowserRouter>
