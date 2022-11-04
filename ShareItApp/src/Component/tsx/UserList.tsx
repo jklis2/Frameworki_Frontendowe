@@ -1,11 +1,16 @@
 import React from "react";
 import "../css/UserList.css";
 import { Card } from "react-bootstrap";
+import User from "../../Entities/Users";
 
 const UserList = (props: any) => {
+  const userFilter = props.items.filter((obj : User) => {
+    return obj.name.includes(props.selectedUser.toString());
+  });
+
   return (
     <div className="d-flex flex-wrap">
-      {props.items.map((user: any) => {
+      {userFilter.map((user: User) => {
         return (
           <Card key={user.id} border="info" className="list text-center">
             <Card.Header>{user.username}</Card.Header>

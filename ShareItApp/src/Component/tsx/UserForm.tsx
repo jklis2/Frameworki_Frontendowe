@@ -1,20 +1,25 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import "../css/UserForm.css";
 
 interface Props {
   user: string;
   setUser(user: string) : void
 }
+let nameFromForm = '';
 
 const UserForm: FC<Props> = (props: any) => {
-  const hadleChange = (event: any) => {
-    props.setUser(event.target.value);
+    const handleChange = (event: any) => {
+    nameFromForm = event.target.value;
+    // props.setUser(nameFromForm);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+  const handleSubmit = (event: any) => {
     event.preventDefault();
-    console.log(props.user);
+    props.setUser(nameFromForm);
   };
+
+
 
   return (
     <div className="form-container d-flex justify-content-center">
@@ -23,7 +28,7 @@ const UserForm: FC<Props> = (props: any) => {
           type="text"
           placeholder="Type name of user"
           value={props.user}
-          onChange={hadleChange}
+          onChange={handleChange}
         ></input>
         <button type="submit">Search</button>
       </form>

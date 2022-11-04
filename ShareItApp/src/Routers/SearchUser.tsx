@@ -23,7 +23,7 @@ const SearchUser: FC = () => {
       <Header></Header>
       <div>
         <UserForm user = {user} setUser = {setUser}/>
-        <UserList items={data} />
+        <UserList items={data} selectedUser = {user} />
       </div>
     </div>
   );

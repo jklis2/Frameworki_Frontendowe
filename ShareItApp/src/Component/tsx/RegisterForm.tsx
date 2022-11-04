@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import {BrowserRouter as Router, Link} from 'react-router-dom';
 import "../css/RegisterForm.css";
 
 const RegisterForm: FC = () => {
