@@ -10,13 +10,13 @@ let nameFromForm = '';
 const UserForm: FC<Props> = (props: any) => {
     const handleChange = (event: any) => {
     nameFromForm = event.target.value;
-    // props.setUser(nameFromForm);
+    props.setUser(nameFromForm);
   };
 
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    props.setUser(nameFromForm);
+    // props.setUser(nameFromForm);
   };
 
 
