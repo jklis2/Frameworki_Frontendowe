@@ -3,6 +3,7 @@ import Photo from "../Entities/Photo";
 import Header from "../Component/tsx/Header";
 import PhotoList from "../Component/tsx/PhotoList";
 import PaginationMenu from "../Component/tsx/PaginationMenu";
+import PhotoForm from "../Component/tsx/PhotoForm";
 
 
 const SearchPhotos: FC = () => {
@@ -31,6 +32,7 @@ const SearchPhotos: FC = () => {
     <div>
       <Header></Header>
       <div>
+          <PhotoForm/>
           <PhotoList items = {currentPosts} />
           <PaginationMenu page={page} pages={noOfPages} setPage = {setPage}/>
       </div>
