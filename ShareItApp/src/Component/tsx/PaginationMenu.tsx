@@ -15,8 +15,10 @@ const PaginationMenu : FC<Props> = (props: any) => {
     }
 
     return (
-        <div>
-            <Pagination count={props.pages} onChange={pageChangeHandler} variant="outlined" className="paignation__menu" />
+        <div className="pagination__menu">
+            <div className="pagination__pages">
+                <Pagination count={props.pages} onChange={pageChangeHandler} variant="outlined" className="paignation__menu" sx={{color: 'white'}}/>
+            </div>
         </div>
     )
 }

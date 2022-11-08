@@ -1,5 +1,15 @@
-.paignation__menu{
-    color: white;
+.pagination__menu{
+    width: 100%;
+}
+
+.pagination__pages{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination__pages ul{
     background-color: white;
-    padding: 1rem;
+    padding: 0.5rem;
+    border-radius: 40px;
 }
