@@ -2,6 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import Photo from "../Entities/Photo";
 import Header from "../Component/tsx/Header";
 import PhotoList from "../Component/tsx/PhotoList";
+import PaginationMenu from "../Component/tsx/PaginationMenu";
 
 
 const SearchPhotos: FC = () => {
@@ -17,11 +18,21 @@ const SearchPhotos: FC = () => {
     fetchData();
   }, []);
 
+  const [page, setPage] = useState(1);
+
+  const noOfItems = data.length;
+  const noOfPages = Math.ceil(noOfItems / 24);
+  
+  const indexOfLastPhoto = page * 24;
+  const indexOfFirstPhoto = indexOfLastPhoto - 24;
+  const currentPosts = data.slice(indexOfFirstPhoto, indexOfLastPhoto);
+
   return (
     <div>
       <Header></Header>
       <div>
-          <PhotoList items = {data} />
+          <PhotoList items = {currentPosts} />
+          <PaginationMenu page={page} pages={noOfPages} setPage = {setPage}/>
       </div>
     </div>
   );

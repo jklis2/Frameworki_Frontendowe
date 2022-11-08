@@ -1,7 +1,18 @@
 .photos__container{
-    width: 90vw;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.photos__items{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    
+}
+
+.photos__img{
+    margin: 0.5rem;
+    width: 150px;
+    height: 150px;
 }
