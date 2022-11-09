@@ -11,7 +11,6 @@ const PhotoList: FC<Props> = (props: any) => {
     return obj.id === Number(props.selectedPhoto);
   });
 
-  console.log(Number(props.selectedPhoto));
 
   return (
     <div className="photos__container">

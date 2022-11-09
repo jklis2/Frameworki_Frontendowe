@@ -3,6 +3,7 @@ import User from "../Entities/Users";
 import Header from "../Component/tsx/Header";
 import UserForm from "../Component/tsx/UserForm";
 import UserList from "../Component/tsx/UserList";
+import '../Component/css/SearchUser.css'
 
 const SearchUser: FC = () => {
   const [data, setData] = useState<Array<User>>([]);
@@ -19,7 +20,7 @@ const SearchUser: FC = () => {
   }, []);
 
   return (
-    <div>
+    <div className="searchuser__container">
       <Header></Header>
       <div>
         <UserForm user = {user} setUser = {setUser}/>
