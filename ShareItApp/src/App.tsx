@@ -7,6 +7,7 @@ import './Component/css/Main.css';
 import Dashboard from './Routers/Dashboard';
 import SearchUser from './Routers/SearchUser';
 import SearchPhotos from './Routers/SearchPhotos';
+import './Component/css/ScrollBar.css'
 
 function App() {
   return (
