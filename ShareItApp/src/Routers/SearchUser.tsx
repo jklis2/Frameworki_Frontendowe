@@ -19,12 +19,16 @@ const SearchUser: FC = () => {
     fetchData();
   }, []);
 
+  
+
   return (
     <div className="searchuser__container">
       <Header></Header>
       <div>
         <UserForm user = {user} setUser = {setUser}/>
-        <UserList items={data} selectedUser = {user} />
+        {data.length > 0 && 
+        < UserList items={data } selectedUser = {user}  />
+        }
       </div>
     </div>
   );
