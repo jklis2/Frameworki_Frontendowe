@@ -1,4 +1,18 @@
-.list{
-    width: 30vw;
+.userlist{
     margin: 1rem;
+    width: 30%;
+}
+
+.userlist__container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userlist__items{
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
 }
