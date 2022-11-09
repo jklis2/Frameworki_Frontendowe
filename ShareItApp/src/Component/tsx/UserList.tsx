@@ -5,7 +5,7 @@ import User from "../../Entities/Users";
 
 const UserList = (props: any) => {
   const userFilter = props.items.filter((obj : User) => {
-    return obj.name.includes(props.selectedUser.toString());
+    return obj.name.toLowerCase().includes(props.selectedUser.toString().toLowerCase());
   });
 
   return (
