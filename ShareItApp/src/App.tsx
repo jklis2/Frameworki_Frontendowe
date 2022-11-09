@@ -3,11 +3,11 @@ import {BrowserRouter, Route, Routes} from "react-router-dom"
 import Login from './Routers/Login';
 import Home from './Routers/Home';
 import Register from './Routers/Register';
-import './Component/css/Main.css';
+import './Component/css/Global/Main.css';
 import Dashboard from './Routers/Dashboard';
 import SearchUser from './Routers/SearchUser';
 import SearchPhotos from './Routers/SearchPhotos';
-import './Component/css/ScrollBar.css'
+import './Component/css/Global/ScrollBar.css'
 
 function App() {
   return (

@@ -4,7 +4,7 @@ import Header from "../Component/tsx/Header";
 import PhotoList from "../Component/tsx/PhotoList";
 import PaginationMenu from "../Component/tsx/PaginationMenu";
 import PhotoForm from "../Component/tsx/PhotoForm";
-import '../Component/css/SearchPhotos.css'
+import '../Component/css/Photo/SearchPhotos.css'
 
 
 const SearchPhotos: FC = () => {

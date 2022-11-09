@@ -1,5 +1,5 @@
 import React, {FC} from "react"
-import "../css/PaginationMenu.css"
+import "../css/Photo/PaginationMenu.css"
 import Pagination from '@mui/material/Pagination';
 
 interface Props {

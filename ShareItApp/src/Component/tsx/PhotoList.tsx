@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Photo from "../../Entities/Photo";
-import "../css/PhotoList.css";
+import "../css/Photo/PhotoList.css";
 
 interface Props {
   items: Photo[];

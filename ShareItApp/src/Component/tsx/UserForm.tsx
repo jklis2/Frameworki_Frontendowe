@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import "../css/UserForm.css";
+import "../css/User/UserForm.css";
 
 interface Props {
   user: string;

@@ -3,7 +3,7 @@ import User from "../Entities/Users";
 import Header from "../Component/tsx/Header";
 import UserForm from "../Component/tsx/UserForm";
 import UserList from "../Component/tsx/UserList";
-import '../Component/css/SearchUser.css'
+import '../Component/css/User/SearchUser.css'
 
 const SearchUser: FC = () => {
   const [data, setData] = useState<Array<User>>([]);

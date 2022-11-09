@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import "../css/PhotoForm.css"
+import "../css/Photo/PhotoForm.css"
 
 interface Props{
     photoId: number;

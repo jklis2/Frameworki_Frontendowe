@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/UserList.css";
+import "../css/User/UserList.css";
 import { Card } from "react-bootstrap";
 import User from "../../Entities/Users";
 
