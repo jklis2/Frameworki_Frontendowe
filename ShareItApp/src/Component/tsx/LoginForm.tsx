@@ -11,7 +11,7 @@ const LoginForm: FC = () => {
             <input type="email" placeholder="User Email" />
             <input type="password" placeholder="Password" />
             <a href="/">Forgot your password?</a>
-            <button>Sign In</button>
+            <button><a href="/Dashboard">Login</a></button>
           </form>
         </div>
 

@@ -7,14 +7,14 @@ interface Props {
 }
 let nameFromForm = '';
 
-const UserForm: FC<Props> = (props: any) => {
-    const handleChange = (event: any) => {
+const UserForm: FC<Props> = (Props) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>)  : void => {
     nameFromForm = event.target.value;
-    props.setUser(nameFromForm);
+    Props.setUser(nameFromForm);
   };
 
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: React.SyntheticEvent) : void => {
     event.preventDefault();
     // props.setUser(nameFromForm);
   };
@@ -26,7 +26,7 @@ const UserForm: FC<Props> = (props: any) => {
         <input className="input-search"
           type="text"
           placeholder="Type name of user"
-          value={props.user}
+          value={Props.user}
           onChange={handleChange}
         ></input>
         {/* <button type="submit">Search</button> */}

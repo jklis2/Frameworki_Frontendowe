@@ -6,12 +6,12 @@ interface Props{
     setPhoto(photoId: number) : void
 }
 
-const PhotoForm: FC<Props> = (props: any) => {
+const PhotoForm: FC<Props> = (Props) => {
 
     const handleChange = (event: any) => {
         event.preventDefault();
         console.log(event.target.value)
-        props.setPhoto(event.target.value)
+        Props.setPhoto(event.target.value)
     }
     
     return(
