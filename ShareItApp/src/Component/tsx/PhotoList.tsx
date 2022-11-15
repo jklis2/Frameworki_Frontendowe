@@ -15,8 +15,7 @@ const PhotoList: FC<Props> = (props: any) => {
   return (
     <div className="photos__container">
       <div className="photos__items">
-        {isNaN(Number(props.selectedPhoto)) ||
-        props.selectedPhoto === "" ||
+        {props.selectedPhoto === "" ||
         props.selectedPhoto === 0
           ? props.items.slice(0, 24).map((photo: Photo) => {
               return (

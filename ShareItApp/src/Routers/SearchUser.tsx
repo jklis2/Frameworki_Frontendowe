@@ -27,7 +27,7 @@ const SearchUser: FC = () => {
       <div>
         <UserForm user = {user} setUser = {setUser}/>
         {data.length > 0 && 
-        < UserList items={data } selectedUser = {user}  />
+        < UserList items={data} selectedUser = {user}  />
         }
       </div>
     </div>
