@@ -8,10 +8,14 @@ import Dashboard from './Routers/Dashboard';
 import SearchUser from './Routers/SearchUser';
 import SearchPhotos from './Routers/SearchPhotos';
 import './Component/css/Global/ScrollBar.css'
+import OLogin from './Services/Operation';
+import { store } from './Redux/store';
+import { Provider } from 'react-redux';
 
 function App() {
   return (
-    <BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/Login' element={<Login/>}></Route>
@@ -19,8 +23,10 @@ function App() {
         <Route path='/Dashboard' element={<Dashboard/>}></Route>
         <Route path='/Photos' element={<SearchPhotos/>}></Route>
         <Route path='/Users' element={<SearchUser/>}></Route>
+        <Route path='/Test' element={<OLogin></OLogin>}></Route>
       </Routes>
     </BrowserRouter>
+      </Provider>
   );
 }
 

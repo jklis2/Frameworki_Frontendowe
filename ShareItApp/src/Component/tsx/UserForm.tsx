@@ -13,12 +13,9 @@ const UserForm: FC<Props> = (Props) => {
     Props.setUser(nameFromForm);
   };
 
-
   const handleSubmit = (event: React.SyntheticEvent) : void => {
     event.preventDefault();
-    // props.setUser(nameFromForm);
   };
-
 
   return (
     <div className="form-container d-flex justify-content-center">
