@@ -9,12 +9,9 @@ import SearchUser from './Routers/SearchUser';
 import SearchPhotos from './Routers/SearchPhotos';
 import './Component/css/Global/ScrollBar.css'
 import OLogin from './Services/Operation';
-import { store } from './Redux/store';
-import { Provider } from 'react-redux';
 
 function App() {
   return (
-      <Provider store={store}>
         <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
@@ -26,7 +23,6 @@ function App() {
         <Route path='/Test' element={<OLogin></OLogin>}></Route>
       </Routes>
     </BrowserRouter>
-      </Provider>
   );
 }
 

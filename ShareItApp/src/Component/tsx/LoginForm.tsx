@@ -1,16 +1,47 @@
 import React, { FC } from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import "../css/LoginForm.css";
+import { login } from "../../Redux/loginSlice";
 
+const LoginForm : FC = () => {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
 
-const LoginForm = () => {
+  const userLoginChange = (event : React.ChangeEvent<HTMLInputElement>) => {
+    setUsername(event.target.value)
+  }
+
+  const userPasswordChange = (event : React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(event.target.value)
+  }
+
+  const dispatch = useDispatch();
+
+  const Login = () => {
+    dispatch(login({username, password}))
+  }
+
+  console.log("Username: " + username + " Password: " + password)
+
   return (
     <div className="login">
       <div className="container">
         <div className="form sign-in-container">
-          <form action="#">
+          <form action="#" onSubmit={Login}>
             <h1>Sign in</h1>
-            <input type="email" placeholder="User Email" />
-            <input type="password" placeholder="Password" />
+
+            <input type="username"
+             placeholder="Username"
+             defaultValue={username} 
+             onChange = {userLoginChange}
+             />
+            <input 
+            type="password" 
+            placeholder="Password"
+            defaultValue={password} 
+            onChange = {userPasswordChange}
+            />
             <a href="/">Forgot your password?</a>
             <button><a href="/Dashboard">Login</a></button>
           </form>

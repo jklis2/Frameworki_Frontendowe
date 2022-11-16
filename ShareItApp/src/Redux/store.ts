@@ -1,5 +1,4 @@
 import {configureStore} from "@reduxjs/toolkit";
-import { configure } from "@testing-library/react";
 import loginReducer from './loginSlice';
 
 export const store = configureStore({

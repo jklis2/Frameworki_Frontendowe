@@ -13,12 +13,12 @@ const initialState: userState = {
 }
 
 export const loginSlice = createSlice({
-    name: 'counter',
+    name: 'auth',
     initialState,
     reducers: {
-      login: (state, action: PayloadAction<string>) => {
-        state.username = 'nazwausera'
-        state.password = 'jakieshaslo'
+      login: (state, action: PayloadAction<{username: string, password: string}>) => {
+        state.username = action.payload.username
+        state.password = action.payload.password
         state.isLoggedIn = true
       }
     }
