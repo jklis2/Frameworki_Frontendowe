@@ -8,7 +8,7 @@ import Dashboard from './Routers/Dashboard';
 import SearchUser from './Routers/SearchUser';
 import SearchPhotos from './Routers/SearchPhotos';
 import './Component/css/Global/ScrollBar.css'
-import OLogin from './Services/Operation';
+import { Test } from './Routers/Test';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <Route path='/Dashboard' element={<Dashboard/>}></Route>
         <Route path='/Photos' element={<SearchPhotos/>}></Route>
         <Route path='/Users' element={<SearchUser/>}></Route>
-        <Route path='/Test' element={<OLogin></OLogin>}></Route>
+        <Route path='/Test' element={<Test></Test>}></Route>
       </Routes>
     </BrowserRouter>
   );

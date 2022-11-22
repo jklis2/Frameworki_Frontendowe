@@ -2,7 +2,6 @@ import React, { FC } from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import "../css/LoginForm.css";
-import { login } from "../../Redux/loginSlice";
 
 const LoginForm : FC = () => {
   const [username, setUsername] = useState('')
@@ -18,17 +17,13 @@ const LoginForm : FC = () => {
 
   const dispatch = useDispatch();
 
-  const Login = () => {
-    dispatch(login({username, password}))
-  }
-
   console.log("Username: " + username + " Password: " + password)
 
   return (
     <div className="login">
       <div className="container">
         <div className="form sign-in-container">
-          <form action="#" onSubmit={Login}>
+          <form action="#">
             <h1>Sign in</h1>
 
             <input type="username"

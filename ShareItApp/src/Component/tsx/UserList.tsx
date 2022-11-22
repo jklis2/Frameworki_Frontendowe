@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/User/UserList.css";
 import { Card } from "react-bootstrap";
-import User from "../../Entities/Users";
+import {User} from "../../Entities/Users";
 
 const UserList = (props: any) => {
   const userFilter = props.items.filter((obj : User) => {
