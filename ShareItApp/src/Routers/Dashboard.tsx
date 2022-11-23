@@ -132,6 +132,7 @@ const Dashboard: FC = () => {
               )
           })}
           </div>
+          <h2> Albums with photos:</h2>
           {/* Delete in the future */}
           <div className="test-tabs">
           <Box sx={{ width: '100%', typography: 'body1'}}>
