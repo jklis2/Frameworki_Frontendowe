@@ -10,8 +10,8 @@ export const getUsers = () =>
       .then((users: User[]) => {
         dispatch({
           type: actionTypes.GET_USERS,
-          users,
+          users
         });
-        return users.slice(0, 1);
+        return users
       });
   }) as any;

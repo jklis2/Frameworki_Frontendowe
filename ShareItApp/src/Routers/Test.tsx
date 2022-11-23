@@ -13,12 +13,16 @@ export const Test: FC = () => {
     dispatch<GetUsers>(getUsers());
   }, [dispatch]);
 
-  const { users } = useSelector<IState, IUsersReducer>((state) => ({
+  const { users, currentUser } = useSelector<IState, IUsersReducer>((state) => ({
     ...state.users,
   }));
 
+
+
+
   return (
     <>
+    {console.log(currentUser)}
       {users?.map((user) => {
         return (
           <div>
