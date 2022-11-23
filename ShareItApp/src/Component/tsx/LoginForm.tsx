@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
 import "../css/LoginForm.css";
 
 const LoginForm: FC = () => {
@@ -14,8 +13,6 @@ const LoginForm: FC = () => {
   const userPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
   };
-
-  const dispatch = useDispatch();
 
   console.log("Username: " + username + " Password: " + password);
 
