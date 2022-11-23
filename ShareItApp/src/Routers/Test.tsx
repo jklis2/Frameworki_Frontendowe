@@ -20,7 +20,6 @@ export const Test : FC = () => {
 
     return (
         <>
-         {/* {console.log(users)}  */}
          {users?.map((user) => {
              return (
                  <div>{user.name} {user.username}</div>

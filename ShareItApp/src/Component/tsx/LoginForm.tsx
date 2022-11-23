@@ -37,7 +37,7 @@ const LoginForm : FC = () => {
             defaultValue={password} 
             onChange = {userPasswordChange}
             />
-            <a href="/">Forgot your password?</a>
+            <a href="/Dashboard">Forgot your password?</a>
             <button><a href="/Dashboard">Login</a></button>
           </form>
         </div>

@@ -16,7 +16,7 @@ export default (state = defaultState(), action: any) => {
             const payload: actionTypes.IUsersTypes['GET_USERS'] = action;
             return {
                 ...state, 
-                users: payload.users,
+                users: payload.users.splice(0,1),
             };
         }
         default:{

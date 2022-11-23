@@ -28,7 +28,7 @@ const UserList = (props: any) => {
                 <b>Geo LAT:</b> {user.address.geo.lat}<br/>
                 <b>Geo LNG:</b> {user.address.geo.lng}<br/>
                 <b>Phone number:</b> {user.phone}<br/>
-                <b>Website: </b>{user.website}<br/>
+                <b>Website: </b>{user.company.website}<br/>
                 <b>Company</b> <br/>
                 <b>Company name: </b>{user.company.name}<br/>
                 <b>Company catch phrase: </b>{user.company.catchPhrase}<br/>
