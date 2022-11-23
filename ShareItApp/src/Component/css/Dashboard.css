@@ -4,7 +4,7 @@
 }
 
 .dashboard-left-menu {
-    width: 25vw;
+    width: 30vw;
     background-color: #fff;
     height: 75vh;
     margin:30px 30px 30px 0px;
@@ -12,7 +12,7 @@
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
 			0 10px 10px rgba(0,0,0,0.22);
 	overflow: hidden;
-    padding: 1.5rem;
+    padding: 0.7rem;
     display: flex;
     flex-direction: column;
 }
@@ -29,6 +29,7 @@
 }
 .dashboard-left-menu-user-info{
     width: 45%;
+    margin-left: 25px;
 
 }
 
@@ -45,6 +46,7 @@
 
 .dashboard-left-menu-user-company{
     width: 45%;
+    margin-left: -10px;
 
 }
 .dashboard-left-menu-button-a{
@@ -52,8 +54,9 @@
 }
 .dashboard-left-menu-button button{
     display: flex;
+    text-align: center;
     flex-direction: column-reverse;
-    margin:  auto;
+    margin-top: 140px;
     border-radius: 20px;
 	border: 1px solid var(--primary-color);
 	background-color: var(--secondary-color);
