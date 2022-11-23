@@ -89,3 +89,15 @@ h3{
 .photoItem{
     margin: 10px;
 }
+
+.posts{
+    width: 50vw;
+    background-color: #fff;
+    height: 75vh;
+    overflow: scroll;
+    padding: 1rem;
+}
+
+.single-post:hover{
+    background-color:rgb(199, 198, 198);
+}

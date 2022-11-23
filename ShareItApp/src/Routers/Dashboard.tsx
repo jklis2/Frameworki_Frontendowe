@@ -13,7 +13,6 @@ import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
 
 type GetUsers = ReturnType<typeof getUsers>;
 const Dashboard: FC = () => {
@@ -30,7 +29,7 @@ const Dashboard: FC = () => {
   const[posts, setPosts] = useState<Array<Post>>([])
   const[albums, setAlbums] = useState<Array<Album>>([])
   const[photo, setPhoto] = useState<Array<Photo>>([]);
-  const [value, setValue] = React.useState('1');
+  const [value, setValue] = React.useState('0');
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
@@ -133,13 +132,13 @@ const Dashboard: FC = () => {
               )
           })}
           </div>
-
+          <h2> Albums with photos:</h2>
           {/* Delete in the future */}
           <div className="test-tabs">
-          <Box sx={{ width: '100%', typography: 'body1' }}>
-      <TabContext value={value}>
+          <Box sx={{ width: '100%', typography: 'body1'}}>
+        <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
+          <TabList variant="scrollable" onChange={handleChange} aria-label="Photo gallery">
             {ownAlbums?.map((album) => {
               return (
                 <Tab label={album.title} value={album.id} />
@@ -148,10 +147,7 @@ const Dashboard: FC = () => {
           }
           </TabList>
         </Box>
-        {/* <TabPanel value="1">Item One</TabPanel>
-        <TabPanel value="2">Item Two</TabPanel>
-        <TabPanel value="3">Item Three</TabPanel> */}
-        <div className="photos d-flex flex-wrap">
+        <div className="photos d-flex justify-content-center flex-wrap">
         {photo?.filter((photo) => {
           return photo.albumId === Number(value)
         }).map((ph: Photo) => {
