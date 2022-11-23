@@ -22,14 +22,15 @@ const Dashboard: FC = () => {
     dispatch<GetUsers>(getUsers());
   }, [dispatch]);
 
-  const { users } = useSelector<IState, IUsersReducer>((state) => ({
+  const { users, currentUser } = useSelector<IState, IUsersReducer>((state) => ({
     ...state.users,
   }));
-
+  
+  console.log(currentUser)
   const[posts, setPosts] = useState<Array<Post>>([])
   const[albums, setAlbums] = useState<Array<Album>>([])
   const[photo, setPhoto] = useState<Array<Photo>>([]);
-  const [value, setValue] = React.useState('0');
+  const [value, setValue] = React.useState('1');
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
