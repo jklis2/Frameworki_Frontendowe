@@ -9,6 +9,7 @@ import SearchUser from './Routers/SearchUser';
 import SearchPhotos from './Routers/SearchPhotos';
 import './Component/css/Global/ScrollBar.css'
 import { Test } from './Routers/Test';
+import EditProfile from'./Routers/EditProfile'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/Dashboard' element={<Dashboard/>}></Route>
         <Route path='/Photos' element={<SearchPhotos/>}></Route>
         <Route path='/Users' element={<SearchUser/>}></Route>
+        <Route path='/EditProfile' element={<EditProfile/>}></Route>
         <Route path='/Test' element={<Test></Test>}></Route>
       </Routes>
     </BrowserRouter>

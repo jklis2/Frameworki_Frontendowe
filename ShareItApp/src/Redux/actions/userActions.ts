@@ -3,10 +3,7 @@ import * as actionTypes from "./actionTypes/usersTypes";
 import { User } from "../../Entities/Users";
 import { IState } from "../Reducers";
 
-interface singleUser {
-  userName: string;
-}
-export const getUsers = (userName?: string) =>
+export const getUsers = () =>
   ((dispatch: Dispatch, getState: () => IState) => {
     return fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
