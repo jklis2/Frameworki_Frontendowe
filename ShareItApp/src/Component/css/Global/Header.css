@@ -2,6 +2,7 @@
     height: 11vh;
     width: 11vh;
 }
+
 .navbar-container{
     width: 100%;
 }
@@ -10,6 +11,7 @@
     display: flex;
     align-items: center;
 }
+
 .logo-text h1{
     padding: 0.5rem;
 }

@@ -1,9 +1,9 @@
 import React, { FC, useEffect, useState } from "react";
-import {User} from "../Entities/Users";
+import { User } from "../Entities/Users";
 import Header from "../Component/tsx/Header";
 import UserForm from "../Component/tsx/UserForm";
 import UserList from "../Component/tsx/UserList";
-import '../Component/css/User/SearchUser.css'
+import "../Component/css/User/SearchUser.css";
 
 const SearchUser: FC = () => {
   const [data, setData] = useState<Array<User>>([]);
@@ -19,15 +19,12 @@ const SearchUser: FC = () => {
     fetchData();
   }, []);
 
-  
   return (
     <div className="searchuser__container">
       <Header></Header>
       <div>
-        <UserForm user = {user} setUser = {setUser}/>
-        {data.length > 0 && 
-        < UserList items={data} selectedUser = {user}  />
-        }
+        <UserForm user={user} setUser={setUser} />
+        {data.length > 0 && <UserList items={data} selectedUser={user} />}
       </div>
     </div>
   );

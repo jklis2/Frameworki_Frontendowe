@@ -1,6 +1,7 @@
 .photoForm-container{
     padding: 1.5rem;
 }
+
 .photoForm-container input:focus[type=text]{
     border: 0;
     outline:0;

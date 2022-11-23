@@ -56,6 +56,7 @@
 .register button:hover {
 	transform: scale(1.05);
 }
+
 .register a:hover {
 	transform: scale(1.05);
 }
@@ -64,6 +65,7 @@
 	background-color: transparent;
 	border-color: #FFFFFF;
 }
+
 .register a.signup_btn {
 	background-color: transparent;
 	border-color: #FFFFFF;
@@ -145,6 +147,7 @@
 .sign-up-text{
 	width: 100%;
 }
+
 .data-container{
 	display: flex;
 	flex-direction: row;

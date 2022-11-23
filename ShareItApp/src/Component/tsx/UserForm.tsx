@@ -3,24 +3,25 @@ import "../css/User/UserForm.css";
 
 interface Props {
   user: string;
-  setUser(user: string) : void
+  setUser(user: string): void;
 }
-let nameFromForm = '';
+let nameFromForm = "";
 
 const UserForm: FC<Props> = (Props) => {
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>)  : void => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     nameFromForm = event.target.value;
     Props.setUser(nameFromForm);
   };
 
-  const handleSubmit = (event: React.SyntheticEvent) : void => {
+  const handleSubmit = (event: React.SyntheticEvent): void => {
     event.preventDefault();
   };
 
   return (
     <div className="form-container d-flex justify-content-center">
       <form onSubmit={handleSubmit}>
-        <input className="input-search"
+        <input
+          className="input-search"
           type="text"
           placeholder="Type name of user"
           value={Props.user}

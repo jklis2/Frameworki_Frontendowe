@@ -1,9 +1,11 @@
 body{
     overflow: overlay;
 }
+
 ::-webkit-scrollbar{
     width: 12px;
 }
+
 ::-webkit-scrollbar-thumb{
     background: linear-gradient(transparent,green);
     border-radius: 6px;

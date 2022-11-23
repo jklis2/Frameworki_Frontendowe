@@ -4,28 +4,28 @@ import { IState } from "../Redux/Reducers";
 import { IUsersReducer } from "../Redux/Reducers/usersReducer";
 import { getUsers } from "../Redux/actions/userActions";
 
-type GetUsers = ReturnType<typeof getUsers>
+type GetUsers = ReturnType<typeof getUsers>;
 
-export const Test : FC = () => {
+export const Test: FC = () => {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch<GetUsers>(getUsers());
+  }, [dispatch]);
 
-    useEffect(() => {
-        dispatch<GetUsers>(getUsers())
-    }, [dispatch])
+  const { users } = useSelector<IState, IUsersReducer>((state) => ({
+    ...state.users,
+  }));
 
-    const {users} = useSelector<IState, IUsersReducer>((state) => ({
-         ...state.users
-     }));
-
-    return (
-        <>
-         {users?.map((user) => {
-             return (
-                 <div>{user.name} {user.username}</div>
-
-             );
-         })} 
-        </>
-    )
-}
+  return (
+    <>
+      {users?.map((user) => {
+        return (
+          <div>
+            {user.name} {user.username}
+          </div>
+        );
+      })}
+    </>
+  );
+};

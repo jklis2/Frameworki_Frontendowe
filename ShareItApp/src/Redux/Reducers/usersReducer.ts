@@ -1,26 +1,26 @@
-import * as actionTypes from '../actions/actionTypes/usersTypes'
-import {User} from '../../Entities/Users'
+import * as actionTypes from "../actions/actionTypes/usersTypes";
+import { User } from "../../Entities/Users";
 
 export interface IUsersReducer {
-    users: User[]
+  users: User[];
 }
 
 const defaultState = (): IUsersReducer => ({
-    users: []
+  users: [],
 });
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state = defaultState(), action: any) => {
-    switch(action.type){
-        case actionTypes.GET_USERS: {
-            const payload: actionTypes.IUsersTypes['GET_USERS'] = action;
-            return {
-                ...state, 
-                users: payload.users.splice(0,1),
-            };
-        }
-        default:{
-            return state;
-        }
+  switch (action.type) {
+    case actionTypes.GET_USERS: {
+      const payload: actionTypes.IUsersTypes["GET_USERS"] = action;
+      return {
+        ...state,
+        users: payload.users.splice(0, 1),
+      };
     }
+    default: {
+      return state;
+    }
+  }
 };

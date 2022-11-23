@@ -11,12 +11,10 @@ const PhotoList: FC<Props> = (props: any) => {
     return obj.id === Number(props.selectedPhoto);
   });
 
-
   return (
     <div className="photos__container">
       <div className="photos__items">
-        {props.selectedPhoto === "" ||
-        props.selectedPhoto === 0
+        {props.selectedPhoto === "" || props.selectedPhoto === 0
           ? props.items.slice(0, 24).map((photo: Photo) => {
               return (
                 <div className="photos__img" key={photo.id}>

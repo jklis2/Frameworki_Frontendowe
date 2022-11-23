@@ -10,7 +10,7 @@ const RegisterForm: FC = () => {
             <div className="register-form">
               <div className="sign-up-text">
                 {/* S U */}
-               <h1>Sign UP</h1>
+                <h1>Sign UP</h1>
               </div>
               <div className="data-container">
                 <div className="personal">
@@ -38,12 +38,13 @@ const RegisterForm: FC = () => {
                     <input type="text" placeholder="City" />
                     <input type="text" placeholder="Zipcode" />
                   </div>
-                  <a href="/Login" type="button" className="button">Back to login</a>
+                  <a href="/Login" type="button" className="button">
+                    Back to login
+                  </a>
                 </div>
                 <div className="company">
                   <div className="company-text">
                     <h2>User company</h2>
-                    {/* U C */}
                   </div>
                   <div className="company-form">
                     <input type="text" placeholder="Website" />
@@ -52,31 +53,9 @@ const RegisterForm: FC = () => {
                     <input type="text" placeholder="Bs" />
                   </div>
                   <button>Sign Up</button>
-                  
                 </div>
-                {/* <div className="actions">
-                  <button>Sign Up</button>
-                  <button>
-                    <a href="/Login">Back to login</a>
-                  </button>
-                </div> */}
               </div>
-
             </div>
-
-
-
-            {/* <div className="forms">
-              
-
-              
-
-              {/* Ask about geo */}
-
-              
-            {/*</div> */}
-
-            
           </form>
         </div>
       </div>
