@@ -136,13 +136,15 @@ const Dashboard: FC = () => {
             <Box sx={{ width: "100%", typography: "body1" }}>
               <TabContext value={value}>
                 <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-                  <TabList
+                  <TabList 
+                    TabIndicatorProps={{style: {backgroundColor:'white', color: 'red'}}}
+                    textColor="inherit"
                     variant="scrollable"
                     onChange={handleChange}
                     aria-label="Photo gallery"
                   >
                     {ownAlbums?.map((album) => {
-                      return <Tab label={album.title} value={album.id} />;
+                      return <Tab label={album.title} value={album.id}  />;
                     })}
                   </TabList>
                 </Box>
