@@ -22,7 +22,7 @@ const Dashboard: FC = () => {
     dispatch<GetUsers>(getUsers());
   }, [dispatch]);
 
-  const {currentUser } = useSelector<IState, IUsersReducer>(
+  const {currentUser} = useSelector<IState, IUsersReducer>(
     (state) => ({
       ...state.users,
     })
@@ -149,8 +149,7 @@ const Dashboard: FC = () => {
                   </TabList>
                 </Box>
                 <div className="photos d-flex justify-content-center flex-wrap">
-                  {photo
-                    ?.filter((photo) => {
+                  {photo?.filter((photo) => {
                       return photo.albumId === Number(value);
                     })
                     .map((ph: Photo) => {
