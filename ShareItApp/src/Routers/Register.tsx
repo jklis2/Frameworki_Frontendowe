@@ -4,7 +4,7 @@ import RegisterForm from "../Component/tsx/RegisterForm";
 const Register: FC = () => {
   return (
     <div>
-      <RegisterForm></RegisterForm>
+      <RegisterForm/>
     </div>
   );
 };

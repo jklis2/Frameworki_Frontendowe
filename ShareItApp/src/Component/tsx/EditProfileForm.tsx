@@ -1,7 +1,31 @@
 import React, { FC } from "react";
+import { getUsers } from "../../Redux/actions/userActions"
 import "../css/EditProfile.css";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { IState } from "../../Redux/Reducers";
+import { IUsersReducer } from "../../Redux/Reducers/usersReducer";
+
+type GetUsers = ReturnType<typeof getUsers>;
 
 const EditProfileForm: FC = () => {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch<GetUsers>(getUsers());
+  }, [dispatch]);
+
+  const {currentUser } = useSelector<IState, IUsersReducer>(
+    (state) => ({
+      ...state.users,
+    })
+  );
+  const name = "Evan"
+
+  console.log(currentUser)
+  if(currentUser !== undefined) currentUser.name = name;
+
   return (
     <div className="register">
       <div className="container">
@@ -24,7 +48,6 @@ const EditProfileForm: FC = () => {
                     <input type="text" placeholder="Username" />
                     <input type="email" placeholder="User Email" />
                     <input type="text" placeholder="Phone" />
-                    <input type="password" placeholder="Password" />
                   </div>
                 </div>
                 <div className="address">
