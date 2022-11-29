@@ -13,6 +13,11 @@ import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
+import Button from '@mui/material/Button';
+import Dialog, { DialogProps } from '@mui/material/Dialog';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import { SelectChangeEvent } from '@mui/material/Select';
 
 type GetUsers = ReturnType<typeof getUsers>;
 const Dashboard: FC = () => {
@@ -28,11 +33,77 @@ const Dashboard: FC = () => {
     })
   );
 
-  console.log(currentUser);
   const [posts, setPosts] = useState<Array<Post>>([]);
   const [albums, setAlbums] = useState<Array<Album>>([]);
   const [photo, setPhoto] = useState<Array<Photo>>([]);
   const [value, setValue] = React.useState("1");
+
+  //State for form values
+  const [name, setName] = useState("");
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState(" ");
+  const [phoneNumber, setPhoneNumber] = useState("")
+
+  //Dialog menu 
+  const [open, setOpen] = React.useState(false);
+  const [fullWidth, setFullWidth] = React.useState(true);
+  const [maxWidth, setMaxWidth] = React.useState<DialogProps['maxWidth']>('sm');
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleMaxWidthChange = (event: SelectChangeEvent<typeof maxWidth>) => {
+    setMaxWidth(
+       // @ts-expect-error autofill of arbitrary value is not handled.
+      event.target.value,
+    );
+  };
+
+  const handleFullWidthChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFullWidth(event.target.checked);
+  };
+  // Dialog menu end
+
+
+  // const [userName, setUserName] = useState("");
+  // const [email, setEmail] = useState(" ");
+  // const [phoneNumber, setPhoneNumber] = useState("")
+
+  //Values from form
+  const nameChange = (event: any) => {
+   setName(event.target.value);
+   console.log(name)
+  };
+
+  const userNameChange = (event: any) => {
+    setUserName(event.target.value);
+    console.log(userName)
+   };
+
+   const emailChange = (event: any) => {
+    setEmail(event.target.value);
+    console.log(email)
+   };
+
+   const phoneNumberChange = (event: any) => {
+    setPhoneNumber(event.target.value);
+    console.log(phoneNumber)
+   };
+
+  const handleValueFromEdit = (e : any) => {
+    if(currentUser){
+      if(name) currentUser.name = name
+      if(userName) currentUser.username = userName;
+      if(email) currentUser.email = email;
+      if(phoneNumber) currentUser.phone = phoneNumber
+    }
+  }
+
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
@@ -114,12 +185,28 @@ const Dashboard: FC = () => {
                 </div>
               </div>
               <div className="dashboard-left-menu-button">
-                <a className="dashboard-left-menu-button-a" href="/EditProfile">
-                  <button>Edit profile</button>
-                </a>
+                  <button className="dashboard-left-menu-button-a" onClick={handleClickOpen}>Edit profile</button>
               </div>
             </div>
           </div>
+
+        <Dialog
+        fullWidth={fullWidth}
+        maxWidth={maxWidth}
+        open={open}
+        onClose={handleClose}
+      >
+        <DialogContent>
+        <DialogContentText>
+            Edit user
+          </DialogContentText>
+          <input type="text" defaultValue={currentUser?.name} placeholder="Name" onChange={nameChange} />
+          <input type="text" defaultValue={currentUser?.username} placeholder="User Name" onChange={userNameChange}></input>
+          <input type="text" defaultValue={currentUser?.email} placeholder="Email" onChange={emailChange}></input>
+          <input type="text" defaultValue={currentUser?.phone} placeholder="Phone Number" onChange={phoneNumberChange}></input>
+          <Button onClick={handleValueFromEdit}>OK</Button>
+        </DialogContent>
+      </Dialog>
 
           <div className="posts">
             {ownPosts?.map((post) => {

@@ -10,7 +10,6 @@ const PhotoList: FC<Props> = (props: any) => {
   const photoFilter = props.items.filter((obj: Photo) => {
     return obj.id === Number(props.selectedPhoto);
   });
-
   return (
     <div className="photos__container">
       <div className="photos__items">

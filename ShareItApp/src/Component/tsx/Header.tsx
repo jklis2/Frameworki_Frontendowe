@@ -3,8 +3,16 @@ import "../css/Global/Header.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { useState } from "react";
 
-const Header: FC = () => {
+interface loginState {
+  logged: boolean
+}
+
+const Header: FC = (props) => {
+
+  const [logged, setLogged] = useState(false);
+
   return (
     <div>
       <Navbar className="navbar" bg="dark" variant="dark" expand="lg">
@@ -26,7 +34,8 @@ const Header: FC = () => {
               <Nav.Link href="/Feed">Feed</Nav.Link>
               <Nav.Link href="/Users">Search User</Nav.Link>
               <Nav.Link href="/Photos">Search Photo</Nav.Link>
-              <Nav.Link href="/Login">Login/Logout</Nav.Link>
+              {logged ? (<Nav.Link href="/">Logout</Nav.Link>) : (<Nav.Link href="/Login">Login</Nav.Link>) }
+              
             </Nav>
           </Navbar.Collapse>
         </Container>

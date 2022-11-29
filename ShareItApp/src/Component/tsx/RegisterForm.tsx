@@ -24,7 +24,6 @@ const RegisterForm: FC = () => {
                     <input type="text" placeholder="Username" />
                     <input type="email" placeholder="User Email" />
                     <input type="text" placeholder="Phone" />
-                    <input type="password" placeholder="Password" />
                   </div>
                 </div>
                 <div className="address">
