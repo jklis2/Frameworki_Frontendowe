@@ -78,22 +78,22 @@ const Dashboard: FC = () => {
   // const [phoneNumber, setPhoneNumber] = useState("")
 
   //Values from form
-  const nameChange = (event: any) => {
+  const nameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
     console.log(name);
   };
 
-  const userNameChange = (event: any) => {
+  const userNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUserName(event.target.value);
     console.log(userName);
   };
 
-  const emailChange = (event: any) => {
+  const emailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
     console.log(email);
   };
 
-  const phoneNumberChange = (event: any) => {
+  const phoneNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPhoneNumber(event.target.value);
     console.log(phoneNumber);
   };

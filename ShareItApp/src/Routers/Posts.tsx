@@ -9,20 +9,20 @@ import { IState } from "../Redux/Reducers";
 import { IUsersReducer } from "../Redux/Reducers/usersReducer";
 import { getUsers } from "../Redux/actions/userActions";
 import { User } from "../Entities/Users";
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Dialog, { DialogProps } from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import FormControl from '@mui/material/FormControl';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import Switch from '@mui/material/Switch';
-import TextField from '@mui/material/TextField';
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Dialog, { DialogProps } from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import FormControl from "@mui/material/FormControl";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Switch from "@mui/material/Switch";
+import TextField from "@mui/material/TextField";
 
 type GetUsers = ReturnType<typeof getUsers>;
 const Posts: FC = () => {
@@ -60,10 +60,32 @@ const Posts: FC = () => {
     fetchComments();
   }, []);
 
+
+  //Handlers for adding post
+
+  const [postTitle, setPostTile] = useState("");
+  const [postContent, setPostContent] = useState("");
+
+  const handleTitle = (e:React.ChangeEvent<HTMLInputElement>) => {
+    setPostTile(e.target.value)
+  }
+  const handleContent = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPostContent(e.target.value)
+  }
+
+  const addNewPost = () => {
+    const newPost : Post = {
+      id: posts.length + 1,
+      userId: currentUser?.id || 1,
+      title: postTitle,
+      body: postContent 
+  }
+  posts.push(newPost)
+  }
   // State for dialog menu
   const [open, setOpen] = React.useState(false);
   const [fullWidth, setFullWidth] = React.useState(true);
-  const [maxWidth, setMaxWidth] = React.useState<DialogProps['maxWidth']>('sm');
+  const [maxWidth, setMaxWidth] = React.useState<DialogProps["maxWidth"]>("sm");
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -76,11 +98,13 @@ const Posts: FC = () => {
   const handleMaxWidthChange = (event: SelectChangeEvent<typeof maxWidth>) => {
     setMaxWidth(
       // @ts-expect-error autofill of arbitrary value is not handled.
-      event.target.value,
+      event.target.value
     );
   };
 
-  const handleFullWidthChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFullWidthChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setFullWidth(event.target.checked);
   };
   //End menu
@@ -88,6 +112,34 @@ const Posts: FC = () => {
   return (
     <div className="d-flex flex-column">
       <Header></Header>
+      <Dialog
+        fullWidth={fullWidth}
+        maxWidth={maxWidth}
+        open={open}
+        onClose={handleClose}
+      >
+        <DialogContent className="d-flex flex-column">
+          <DialogContentText>Add post</DialogContentText>
+          <TextField
+            type="text"
+            label="Post title"
+            size="small"
+            className="mt-3"
+            onChange={handleTitle}
+          ></TextField>
+          <TextField
+            type="text"
+            label="Comment content"
+            multiline
+            className="mt-3"
+            maxRows={Infinity}
+            onChange={handleContent}
+            
+          ></TextField>
+          <Button onClick={addNewPost} >OK</Button>
+        </DialogContent>
+      </Dialog>
+
       <div className="d-flex flex-column align-items-center">
         <button onClick={handleClickOpen}>Add post</button>
         {posts.map((post) => {
@@ -126,18 +178,6 @@ const Posts: FC = () => {
                     })}
                 </Accordion.Item>
               </Accordion>
-
-          <Dialog
-            fullWidth={fullWidth}
-            maxWidth={maxWidth}
-            open={open}
-            onClose={handleClose}
-          >
-            <DialogContent className="d-flex flex-column">
-              <DialogContentText>Add post</DialogContentText>
-              <Button onClick={handleClose}>OK</Button>
-            </DialogContent>
-          </Dialog>
             </div>
           );
         })}
