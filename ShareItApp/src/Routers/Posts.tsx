@@ -9,6 +9,20 @@ import { IState } from "../Redux/Reducers";
 import { IUsersReducer } from "../Redux/Reducers/usersReducer";
 import { getUsers } from "../Redux/actions/userActions";
 import { User } from "../Entities/Users";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Dialog, { DialogProps } from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import FormControl from '@mui/material/FormControl';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Switch from '@mui/material/Switch';
+import TextField from '@mui/material/TextField';
 
 type GetUsers = ReturnType<typeof getUsers>;
 const Posts: FC = () => {
@@ -46,10 +60,36 @@ const Posts: FC = () => {
     fetchComments();
   }, []);
 
+  // State for dialog menu
+  const [open, setOpen] = React.useState(false);
+  const [fullWidth, setFullWidth] = React.useState(true);
+  const [maxWidth, setMaxWidth] = React.useState<DialogProps['maxWidth']>('sm');
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleMaxWidthChange = (event: SelectChangeEvent<typeof maxWidth>) => {
+    setMaxWidth(
+      // @ts-expect-error autofill of arbitrary value is not handled.
+      event.target.value,
+    );
+  };
+
+  const handleFullWidthChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFullWidth(event.target.checked);
+  };
+  //End menu
+
   return (
     <div className="d-flex flex-column">
       <Header></Header>
       <div className="d-flex flex-column align-items-center">
+        <button onClick={handleClickOpen}>Add post</button>
         {posts.map((post) => {
           return (
             <div className="w-75">
@@ -86,6 +126,18 @@ const Posts: FC = () => {
                     })}
                 </Accordion.Item>
               </Accordion>
+
+          <Dialog
+            fullWidth={fullWidth}
+            maxWidth={maxWidth}
+            open={open}
+            onClose={handleClose}
+          >
+            <DialogContent className="d-flex flex-column">
+              <DialogContentText>Add post</DialogContentText>
+              <Button onClick={handleClose}>OK</Button>
+            </DialogContent>
+          </Dialog>
             </div>
           );
         })}
