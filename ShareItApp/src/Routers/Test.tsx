@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { IState } from "../Redux/Reducers";
 import { IUsersReducer } from "../Redux/Reducers/usersReducer";
 import { getUsers } from "../Redux/actions/userActions";
+import {Button} from "../styleHelpers/button";
 
 type GetUsers = ReturnType<typeof getUsers>;
 
@@ -22,6 +23,9 @@ export const Test: FC = () => {
 
   return (
     <>
+    <div>
+        <Button>123</Button>
+    </div>
     {console.log(currentUser)}
       {users?.map((user) => {
         return (
