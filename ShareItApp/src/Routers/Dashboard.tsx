@@ -13,12 +13,12 @@ import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
-import Button from "@mui/material/Button";
 import Dialog, { DialogProps } from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import { SelectChangeEvent } from "@mui/material/Select";
 import TextField from '@mui/material/TextField';
+import {Button} from "../styleHelpers/Button";
 // import Alert from '@mui/material/Alert';
 // import AlertTitle from '@mui/material/AlertTitle';
 // import Stack from '@mui/material/Stack';
@@ -186,12 +186,12 @@ const Dashboard: FC = () => {
               </div>
             </div>
             <div className="dashboard-left-menu-button">
-              <button
+              <Button
                 className="dashboard-left-menu-button-a"
                 onClick={handleClickOpen}
               >
                 Edit profile
-              </button>
+              </Button>
             </div>
           </div>
 

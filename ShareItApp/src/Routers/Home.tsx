@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import Header from "../Component/tsx/Header";
 import "../Component/css/Home.css";
 import Carousel from "react-bootstrap/Carousel";
+import {Button} from "../styleHelpers/Button";
 
 const Home: FC = () => {
   return (
@@ -59,11 +60,7 @@ const Home: FC = () => {
               friendship and memories. Do you want to share a memory, photo or
               moment with your friends? Join us!
             </div>
-            <a className="welcome-button-a" href="/Register">
-              <div className="welcome-button">
-                <span>Join to us!</span>
-              </div>
-            </a>
+            <Button as="a" href="/Register"><span>Join to us!</span></Button>
           </div>
         </div>
       </div>

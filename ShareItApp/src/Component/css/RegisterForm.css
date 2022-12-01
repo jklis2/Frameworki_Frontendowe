@@ -33,42 +33,11 @@
 	margin: 20px 0 30px;
 }
 
-.register a, .register a:visited {
-	text-decoration: none !important;
-	color: #fff;
-}
-
 .register button,.register a {
-	border-radius: 20px;
-	border: 1px solid var(--primary-color);
-	background-color: var(--secondary-color);
-	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: bold;
 	padding: 12px 45px;
-	text-transform: uppercase;
-	cursor: pointer;
 	width: 20vw;
 	margin-left: 15px;
 	margin-top: 45px;
-}
-
-.register button:hover {
-	transform: scale(1.05);
-}
-
-.register a:hover {
-	transform: scale(1.05);
-}
-
-.register button.signup_btn {
-	background-color: transparent;
-	border-color: #FFFFFF;
-}
-
-.register a.signup_btn {
-	background-color: transparent;
-	border-color: #FFFFFF;
 }
 
 .register form {

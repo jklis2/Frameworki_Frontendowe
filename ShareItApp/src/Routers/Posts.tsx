@@ -10,7 +10,6 @@ import { IUsersReducer } from "../Redux/Reducers/usersReducer";
 import { getUsers } from "../Redux/actions/userActions";
 import { User } from "../Entities/Users";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Dialog, { DialogProps } from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
@@ -23,6 +22,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Switch from "@mui/material/Switch";
 import TextField from "@mui/material/TextField";
+import {Button} from "../styleHelpers/Button";
 
 
 type GetUsers = ReturnType<typeof getUsers>;
@@ -142,7 +142,7 @@ const Posts: FC = () => {
       </Dialog>
 
       <div className="d-flex flex-column align-items-center">
-        <button onClick={handleClickOpen}>Add post</button>
+        <Button onClick={handleClickOpen}>Add post</Button>
         {posts.map((post) => {
           return (
             <div className="w-75">

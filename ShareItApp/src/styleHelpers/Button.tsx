@@ -16,5 +16,11 @@ font-size: 12px;
 font-weight: bold;
 padding: 12px 45px;
 text-transform: uppercase;
-cursor: pointer
+cursor: pointer;
+
+&:hover{
+    text-decoration: none;
+    color: #FFFFFF;
+	transform: scale(1.05);
+}
 ` 

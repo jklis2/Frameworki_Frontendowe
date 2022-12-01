@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import "../css/RegisterForm.css";
+import {Button} from "../../styleHelpers/Button";
 
 const RegisterForm: FC = () => {
   return (
@@ -37,9 +38,7 @@ const RegisterForm: FC = () => {
                     <input type="text" placeholder="City" />
                     <input type="text" placeholder="Zipcode" />
                   </div>
-                  <a href="/Login" type="button" className="button">
-                    Back to login
-                  </a>
+                  <Button as="a" href="/Login"><span>Back to login</span></Button>
                 </div>
                 <div className="company">
                   <div className="company-text">
@@ -51,7 +50,7 @@ const RegisterForm: FC = () => {
                     <input type="text" placeholder="Catch Phrase" />
                     <input type="text" placeholder="Bs" />
                   </div>
-                  <button>Sign Up</button>
+                  <Button>Sign Up</Button>
                 </div>
               </div>
             </div>
