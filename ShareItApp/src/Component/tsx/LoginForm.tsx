@@ -20,7 +20,7 @@ const LoginForm: FC = () => {
     <div className="login">
       <div className="container">
         <div className="form sign-in-container">
-          <form action="#">
+          <form action="/Dashboard">
             <h1>Sign in</h1>
 
             <input
@@ -35,10 +35,10 @@ const LoginForm: FC = () => {
               defaultValue={password}
               onChange={userPasswordChange}
             />
-            <a href="/Dashboard">Forgot your password?</a>
-            <button>
-              <a href="/Dashboard">Login</a>
-            </button>
+            <a href="/">Forgot your password?</a>
+            <a href="/Dashboard">
+              <button>Login</button>
+            </a>
           </form>
         </div>
 
