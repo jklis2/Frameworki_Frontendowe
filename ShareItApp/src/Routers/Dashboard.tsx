@@ -151,6 +151,7 @@ const Dashboard: FC = () => {
       <div className="dashboard-container">
         <Header />
         <div className="container">
+          <div className="dashboard-top-menu">
           <div className="dashboard-left-menu ">
             <div className="dashboard-left-menu-1">
               <div className="dashboard-left-menu-img">
@@ -187,7 +188,7 @@ const Dashboard: FC = () => {
             </div>
             <div className="dashboard-left-menu-button">
               <Button
-                className="dashboard-left-menu-button-a"
+                className="dashboard-left-menu-button-a" 
                 onClick={handleClickOpen}
               >
                 Edit profile
@@ -248,6 +249,7 @@ const Dashboard: FC = () => {
                 </div>
               );
             })}
+          </div>
           </div>
           <h2> Albums with photos:</h2>
           <div className="test-tabs">
