@@ -86,9 +86,16 @@ h3{
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
 			0 10px 10px rgba(0,0,0,0.22);
     height: 75vh;
-    overflow: scroll;
+    overflow:scroll;
+    overflow-x: hidden;
     margin-top: 1.9rem;
-    padding: 1rem;
+    padding: 1rem;   
+}
+
+.single-post{
+    width: auto;
+    padding: 0.5rem;
+    border-radius: 10px;
 }
 
 .single-post:hover{
