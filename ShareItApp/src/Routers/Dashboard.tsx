@@ -19,9 +19,8 @@ import DialogContentText from "@mui/material/DialogContentText";
 import { SelectChangeEvent } from "@mui/material/Select";
 import TextField from '@mui/material/TextField';
 import {Button} from "../styleHelpers/Button";
-// import Alert from '@mui/material/Alert';
-// import AlertTitle from '@mui/material/AlertTitle';
-// import Stack from '@mui/material/Stack';
+import {UserMenu} from "../Component/tsx/Dashboard/UserMenu"
+
 
 type GetUsers = ReturnType<typeof getUsers>;
 const Dashboard: FC = () => {
@@ -79,67 +78,7 @@ const Dashboard: FC = () => {
     setFullWidth(event.target.checked);
   };
   // Dialog menu end
-
-  // const [userName, setUserName] = useState("");
-  // const [email, setEmail] = useState(" ");
-  // const [phoneNumber, setPhoneNumber] = useState("")
-
-  //Values from form
-  const nameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value);
-    console.log(name);
-  };
-
-  const userNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setUserName(event.target.value);
-    console.log(userName);
-  };
-
-  const emailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
-    console.log(email);
-  };
-
-  const phoneNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPhoneNumber(event.target.value);
-    console.log(phoneNumber);
-  };
-
-  const streetChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setStreet(event.target.value);
-    console.log(street);
-  };
-
-  const suiteChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSuite(event.target.value);
-    console.log(suite);
-  };
-
-  const cityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCity(event.target.value);
-    console.log(city);
-  };
-
-  const zipcodeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setZipcode(event.target.value);
-    console.log(zipcode);
-  };
-
-  const companyNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCompanyName(event.target.value);
-    console.log(companyName);
-  };
-
-  const catchPhraseChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCatchPhrase(event.target.value);
-    console.log(catchPhrase);
-  };
-
-  const bsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setBs(event.target.value);
-    console.log(bs);
-  };
-
+  
   const handleValueFromEdit = (e: any) => {
     if (currentUser) {
       if (name) currentUser.name = name;
@@ -201,49 +140,7 @@ const Dashboard: FC = () => {
         <Header />
         <div className="container">
           <div className="dashboard-top-menu">
-          <div className="dashboard-left-menu ">
-            <div className="dashboard-left-menu-1">
-              <div className="dashboard-left-menu-img">
-                <img
-                  src={`${process.env.PUBLIC_URL}/img/Avatar.png`}
-                  alt="Avatar"
-                />
-              </div>
-              <div className="dashboard-left-menu-user-info">
-                <h3>User info:</h3>
-                <div className="user-data">{currentUser?.name}</div>
-                <div className="user-data">{currentUser?.username}</div>
-                <div className="user-data">{currentUser?.email}</div>
-                <div className="user-data">{currentUser?.phone}</div>
-              </div>
-            </div>
-            <div className="dashboard-left-menu-2">
-              <div className="dashboard-left-menu-user-address">
-                <h3>User address:</h3>
-                <div className="user-data">{currentUser?.address.street}</div>
-                <div className="user-data">{currentUser?.address.suite}</div>
-                <div className="user-data">{currentUser?.address.city}</div>
-                <div className="user-data">{currentUser?.address.zipcode}</div>
-              </div>
-              <div className="dashboard-left-menu-user-company">
-                <h3>User Company:</h3>
-                <div className="user-data">{currentUser?.company.website}</div>
-                <div className="user-data">{currentUser?.company.name}</div>
-                <div className="user-data">
-                  {currentUser?.company.catchPhrase}
-                </div>
-                <div className="user-data">{currentUser?.company.bs}</div>
-              </div>
-            </div>
-            <div className="dashboard-left-menu-button">
-              <Button
-                className="dashboard-left-menu-button-a" 
-                onClick={handleClickOpen}
-              >
-                Edit profile
-              </Button>
-            </div>
-          </div>
+          <UserMenu currentUser={currentUser} handleClickOpen={handleClickOpen}></UserMenu>
 
           <Dialog
             fullWidth={fullWidth}
@@ -258,7 +155,7 @@ const Dashboard: FC = () => {
                 label="Name and Surname"
                 defaultValue={currentUser?.name}
                 placeholder="Name"
-                onChange={nameChange}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
                 className="mt-3"
               />
               <TextField
@@ -266,7 +163,7 @@ const Dashboard: FC = () => {
                 label="Username"
                 defaultValue={currentUser?.username}
                 placeholder="User Name"
-                onChange={userNameChange}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUserName(e.target.value)}
                 className="mt-3"
               />
               <TextField
@@ -274,7 +171,7 @@ const Dashboard: FC = () => {
                 label="Email"
                 defaultValue={currentUser?.email}
                 placeholder="Email"
-                onChange={emailChange}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                 className="mt-3"
               />
               <TextField
@@ -282,7 +179,7 @@ const Dashboard: FC = () => {
                 label="Phone"
                 defaultValue={currentUser?.phone}
                 placeholder="Phone Number"
-                onChange={phoneNumberChange}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPhoneNumber(e.target.value)}
                 className="mt-3"
               />
               <TextField
@@ -290,7 +187,7 @@ const Dashboard: FC = () => {
                 label="Street"
                 defaultValue={currentUser?.address.street}
                 placeholder="Street"
-                onChange={streetChange}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setStreet(e.target.value)}
                 className="mt-3"
               />
               <TextField
@@ -298,7 +195,7 @@ const Dashboard: FC = () => {
                 label="Suite"
                 defaultValue={currentUser?.address.suite}
                 placeholder="Suite"
-                onChange={suiteChange}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSuite(e.target.value)}
                 className="mt-3"
               />
               <TextField
@@ -306,7 +203,7 @@ const Dashboard: FC = () => {
                 label="City"
                 defaultValue={currentUser?.address.city}
                 placeholder="City"
-                onChange={cityChange}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCity(e.target.value)}
                 className="mt-3"
               />
               <TextField
@@ -314,7 +211,7 @@ const Dashboard: FC = () => {
                 label="ZipCode"
                 defaultValue={currentUser?.address.zipcode}
                 placeholder="ZipCode"
-                onChange={zipcodeChange}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setZipcode(e.target.value)}
                 className="mt-3"
               />
               <TextField
@@ -322,7 +219,7 @@ const Dashboard: FC = () => {
                 label="Company name"
                 defaultValue={currentUser?.company.name}
                 placeholder="Company name"
-                onChange={companyNameChange}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCompanyName(e.target.value)}
                 className="mt-3"
               />
               <TextField
@@ -330,7 +227,7 @@ const Dashboard: FC = () => {
                 label="Catch phrase"
                 defaultValue={currentUser?.company.catchPhrase}
                 placeholder="Catch phrase"
-                onChange={catchPhraseChange}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCatchPhrase(e.target.value)}
                 className="mt-3"
               />
               <TextField
@@ -338,7 +235,7 @@ const Dashboard: FC = () => {
                 label="BS"
                 defaultValue={currentUser?.company.bs}
                 placeholder="BS"
-                onChange={bsChange}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setBs(e.target.value)}
                 className="mt-3"
               />
               <Button onClick={handleValueFromEdit}>OK</Button>
