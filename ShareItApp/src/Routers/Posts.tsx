@@ -22,8 +22,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Switch from "@mui/material/Switch";
 import TextField from "@mui/material/TextField";
-import {Button} from "../styleHelpers/Button";
-
+import { Button, DeleteButton } from "../styleHelpers/Button";
 
 type GetUsers = ReturnType<typeof getUsers>;
 const Posts: FC = () => {
@@ -61,28 +60,27 @@ const Posts: FC = () => {
     fetchComments();
   }, []);
 
-
   //Handlers for adding post
 
   const [postTitle, setPostTile] = useState("");
   const [postContent, setPostContent] = useState("");
 
-  const handleTitle = (e:React.ChangeEvent<HTMLInputElement>) => {
-    setPostTile(e.target.value)
-  }
+  const handleTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPostTile(e.target.value);
+  };
   const handleContent = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPostContent(e.target.value)
-  }
+    setPostContent(e.target.value);
+  };
 
   const addNewPost = () => {
-    const newPost : Post = {
+    const newPost: Post = {
       id: posts.length + 1,
       userId: currentUser?.id || 1,
       title: postTitle,
-      body: postContent 
-  }
-  posts.push(newPost)
-  }
+      body: postContent,
+    };
+    posts.push(newPost);
+  };
   // State for dialog menu
   const [open, setOpen] = React.useState(false);
   const [fullWidth, setFullWidth] = React.useState(true);
@@ -110,6 +108,10 @@ const Posts: FC = () => {
   };
   //End menu
 
+  const deletePost = (postId: number) => {
+    setPosts(posts.filter((post: Post) => post.id !== Number(postId)))
+  }
+
   return (
     <div className="d-flex flex-column">
       <Header></Header>
@@ -135,9 +137,8 @@ const Posts: FC = () => {
             className="mt-3"
             maxRows={Infinity}
             onChange={handleContent}
-            
           ></TextField>
-          <Button onClick={addNewPost} >OK</Button>
+          <Button onClick={addNewPost}>OK</Button>
         </DialogContent>
       </Dialog>
 
@@ -158,6 +159,14 @@ const Posts: FC = () => {
                   })}
               </h2>
               <p>{post.body}</p>
+
+              {post.userId === currentUser?.id ? (
+                <div className="d-flex flex-end justify-content-end align-items-end m-2">
+                  <DeleteButton onClick={() => deletePost(post.id)}>Delete post</DeleteButton>
+                </div>
+              ) : (
+                <></>
+              )}
 
               <Accordion className="bg-transparent">
                 <Accordion.Item eventKey="0" className="bg-transparent">
