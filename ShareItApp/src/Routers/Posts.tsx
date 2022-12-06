@@ -9,18 +9,11 @@ import { IState } from "../Redux/Reducers";
 import { IUsersReducer } from "../Redux/Reducers/usersReducer";
 import { getUsers } from "../Redux/actions/userActions";
 import { User } from "../Entities/Users";
-import Box from "@mui/material/Box";
 import Dialog, { DialogProps } from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
-import FormControl from "@mui/material/FormControl";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import Switch from "@mui/material/Switch";
 import TextField from "@mui/material/TextField";
 import { Button, DeleteButton } from "../styleHelpers/Button";
 
@@ -62,6 +55,7 @@ const Posts: FC = () => {
 
   //Handlers for posts
 
+  const [selectedPost, setSelectedPost] = useState(-1);
   const [postTitle, setPostTile] = useState("");
   const [postContent, setPostContent] = useState("");
 
@@ -87,10 +81,35 @@ const Posts: FC = () => {
   };
 
   // Comments
-  const addComment = () => {};
+
+  const [commentTitle, setCommentTitle] = useState("");
+  const [commentContent, setCommentContent] = useState("");
+
+  const handleCommentTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCommentTitle(e.target.value);
+  };
+  const handleCommentContent = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCommentContent(e.target.value);
+  };
+
+  const addComment = () => {
+    const newComment: Comment = {
+      postId: selectedPost,
+      id: comments.length + 1,
+      name: commentTitle,
+      email: currentUser?.email || "",
+      body: commentContent,
+    };
+    comments.push(newComment);
+  };
+
+  const deleteComment = (commentId: number) => {
+    setComments(comments.filter((comment: Comment) => comment.id !== Number(commentId)));
+  };
 
   // State for dialog menu
   const [open, setOpen] = React.useState(false);
+  const [commentOpen, setCommentOpen] = useState(false);
   const [fullWidth, setFullWidth] = React.useState(true);
   const [maxWidth, setMaxWidth] = React.useState<DialogProps["maxWidth"]>("sm");
 
@@ -100,6 +119,15 @@ const Posts: FC = () => {
 
   const handleClose = () => {
     setOpen(false);
+  };
+  //Dialog menu for comments
+
+  const handleClickOpenComment = () => {
+    setCommentOpen(true);
+  };
+
+  const handleCloseComment = () => {
+    setCommentOpen(false);
   };
 
   const handleMaxWidthChange = (event: SelectChangeEvent<typeof maxWidth>) => {
@@ -136,13 +164,40 @@ const Posts: FC = () => {
           ></TextField>
           <TextField
             type="text"
-            label="Comment content"
+            label="Post content"
             multiline
             className="mt-3"
             maxRows={Infinity}
             onChange={handleContent}
           ></TextField>
           <Button onClick={addNewPost}>OK</Button>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog
+        fullWidth={fullWidth}
+        maxWidth={maxWidth}
+        open={commentOpen}
+        onClose={handleCloseComment}
+      >
+        <DialogContent className="d-flex flex-column">
+        <DialogContentText>Add comment</DialogContentText>
+          <TextField
+            type="text"
+            label="Comment title"
+            size="small"
+            className="mt-3"
+            onChange={handleCommentTitle}
+          ></TextField>
+          <TextField
+            type="text"
+            label="Comment content"
+            multiline
+            className="mt-3"
+            maxRows={Infinity}
+            onChange={handleCommentContent}
+          ></TextField>
+          <Button onClick={addComment}>OK</Button>
         </DialogContent>
       </Dialog>
 
@@ -177,9 +232,15 @@ const Posts: FC = () => {
               <Accordion className="bg-transparent">
                 <Accordion.Item eventKey="0" className="bg-transparent">
                   <Accordion.Header>Comments</Accordion.Header>
-
                   <div className="m-3">
-                    <Button onClick={handleClickOpen}>Add comment</Button>
+                    <Button
+                      onClick={() => {
+                        setSelectedPost(post.id);
+                        handleClickOpenComment();
+                      }}
+                    >
+                      Add comment
+                    </Button>
                   </div>
 
                   {comments
@@ -193,9 +254,14 @@ const Posts: FC = () => {
                             {cm.name} ~ {cm.email}
                           </h3>
                           {cm.body}
-                          <div className="d-flex flex-end justify-content-end align-items-end">
-                            <DeleteButton>Delete comment</DeleteButton>
-                          </div>
+
+                          {cm.email === currentUser?.email ? (
+                            <div className="d-flex flex-end justify-content-end align-items-end">
+                              <DeleteButton onClick={() => deleteComment(cm.id)}>Delete comment</DeleteButton>
+                            </div>
+                          ) : (
+                            <></>
+                          )}
                         </Accordion.Body>
                       );
                     })}
