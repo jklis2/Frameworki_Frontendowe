@@ -45,6 +45,13 @@ const Dashboard: FC = () => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [street, setStreet] = useState("")
+  const [suite, setSuite] = useState("")
+  const [city, setCity] = useState("")
+  const [zipcode, setZipcode] = useState("")
+  const [companyName, setCompanyName] = useState("")
+  const [catchPhrase, setCatchPhrase] = useState("")
+  const [bs, setBs] = useState("")
 
   //Dialog menu
   const [open, setOpen] = React.useState(false);
@@ -98,12 +105,54 @@ const Dashboard: FC = () => {
     console.log(phoneNumber);
   };
 
+  const streetChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setStreet(event.target.value);
+    console.log(street);
+  };
+
+  const suiteChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSuite(event.target.value);
+    console.log(suite);
+  };
+
+  const cityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCity(event.target.value);
+    console.log(city);
+  };
+
+  const zipcodeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setZipcode(event.target.value);
+    console.log(zipcode);
+  };
+
+  const companyNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCompanyName(event.target.value);
+    console.log(companyName);
+  };
+
+  const catchPhraseChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCatchPhrase(event.target.value);
+    console.log(catchPhrase);
+  };
+
+  const bsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setBs(event.target.value);
+    console.log(bs);
+  };
+
   const handleValueFromEdit = (e: any) => {
     if (currentUser) {
       if (name) currentUser.name = name;
       if (userName) currentUser.username = userName;
       if (email) currentUser.email = email;
       if (phoneNumber) currentUser.phone = phoneNumber;
+      if (street) currentUser.address.street = street;
+      if (suite) currentUser.address.suite = suite;
+      if (city) currentUser.address.city = city;
+      if (zipcode) currentUser.address.zipcode = zipcode;
+      if (companyName) currentUser.company.name = companyName;
+      if (catchPhrase) currentUser.company.catchPhrase = catchPhrase;
+      if (bs) currentUser.company.bs = bs;
     }
 
     handleClose();
@@ -234,6 +283,62 @@ const Dashboard: FC = () => {
                 defaultValue={currentUser?.phone}
                 placeholder="Phone Number"
                 onChange={phoneNumberChange}
+                className="mt-3"
+              />
+              <TextField
+                type="text"
+                label="Street"
+                defaultValue={currentUser?.address.street}
+                placeholder="Street"
+                onChange={streetChange}
+                className="mt-3"
+              />
+              <TextField
+                type="text"
+                label="Suite"
+                defaultValue={currentUser?.address.suite}
+                placeholder="Suite"
+                onChange={suiteChange}
+                className="mt-3"
+              />
+              <TextField
+                type="text"
+                label="City"
+                defaultValue={currentUser?.address.city}
+                placeholder="City"
+                onChange={cityChange}
+                className="mt-3"
+              />
+              <TextField
+                type="text"
+                label="ZipCode"
+                defaultValue={currentUser?.address.zipcode}
+                placeholder="ZipCode"
+                onChange={zipcodeChange}
+                className="mt-3"
+              />
+              <TextField
+                type="text"
+                label="Company name"
+                defaultValue={currentUser?.company.name}
+                placeholder="Company name"
+                onChange={companyNameChange}
+                className="mt-3"
+              />
+              <TextField
+                type="text"
+                label="Catch phrase"
+                defaultValue={currentUser?.company.catchPhrase}
+                placeholder="Catch phrase"
+                onChange={catchPhraseChange}
+                className="mt-3"
+              />
+              <TextField
+                type="text"
+                label="BS"
+                defaultValue={currentUser?.company.bs}
+                placeholder="BS"
+                onChange={bsChange}
                 className="mt-3"
               />
               <Button onClick={handleValueFromEdit}>OK</Button>
