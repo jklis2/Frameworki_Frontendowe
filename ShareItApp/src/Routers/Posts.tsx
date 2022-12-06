@@ -60,7 +60,7 @@ const Posts: FC = () => {
     fetchComments();
   }, []);
 
-  //Handlers for adding post
+  //Handlers for posts
 
   const [postTitle, setPostTile] = useState("");
   const [postContent, setPostContent] = useState("");
@@ -81,6 +81,14 @@ const Posts: FC = () => {
     };
     posts.push(newPost);
   };
+
+  const deletePost = (postId: number) => {
+    setPosts(posts.filter((post: Post) => post.id !== Number(postId)));
+  };
+
+  // Comments
+  const addComment = () => {};
+
   // State for dialog menu
   const [open, setOpen] = React.useState(false);
   const [fullWidth, setFullWidth] = React.useState(true);
@@ -107,10 +115,6 @@ const Posts: FC = () => {
     setFullWidth(event.target.checked);
   };
   //End menu
-
-  const deletePost = (postId: number) => {
-    setPosts(posts.filter((post: Post) => post.id !== Number(postId)))
-  }
 
   return (
     <div className="d-flex flex-column">
@@ -162,7 +166,9 @@ const Posts: FC = () => {
 
               {post.userId === currentUser?.id ? (
                 <div className="d-flex flex-end justify-content-end align-items-end m-2">
-                  <DeleteButton onClick={() => deletePost(post.id)}>Delete post</DeleteButton>
+                  <DeleteButton onClick={() => deletePost(post.id)}>
+                    Delete post
+                  </DeleteButton>
                 </div>
               ) : (
                 <></>
@@ -171,7 +177,11 @@ const Posts: FC = () => {
               <Accordion className="bg-transparent">
                 <Accordion.Item eventKey="0" className="bg-transparent">
                   <Accordion.Header>Comments</Accordion.Header>
-                  <br />
+
+                  <div className="m-3">
+                    <Button onClick={handleClickOpen}>Add comment</Button>
+                  </div>
+
                   {comments
                     .filter((comment) => {
                       return comment.postId === post.id;
@@ -183,6 +193,9 @@ const Posts: FC = () => {
                             {cm.name} ~ {cm.email}
                           </h3>
                           {cm.body}
+                          <div className="d-flex flex-end justify-content-end align-items-end">
+                            <DeleteButton>Delete comment</DeleteButton>
+                          </div>
                         </Accordion.Body>
                       );
                     })}
