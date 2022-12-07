@@ -1,7 +1,31 @@
 ## ChangeLog
 
-- **v2.2** (`2022/11/23`)
+- **v3.3** (`2022/12/07`)
 	- In progress
+
+- **v3.2** (`2022/12/06`)
+	- Add button to comments management
+    - Add photos to feed
+
+- **v3.1** (`2022/12/05`)
+	- Fix login form, dashboard
+
+- **v3.0** (`2022/12/01`)
+	- Add styled-components
+
+- **v2.4** (`2022/11/29`)
+	- Info about post author, and comment author
+
+- **v2.3** (`2022/11/24`)
+    - Fetch posts from api with comments
+	- Add pages for posts and feed
+
+- **v2.2** (`2022/11/23`)
+    - Add text to dashboard
+	- Add margin to user photos
+    - Phots in dashboard
+    - Code format
+    - Dashboard data
 
 - **v2.1** (`2022/11/22`)
     - Add redux to project, features from lesson
