@@ -9,10 +9,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Post } from "../Entities/Posts";
 import { Album } from "../Entities/Albums";
 import Photo from "../Entities/Photo";
-import Box from "@mui/material/Box";
-import Tab from "@mui/material/Tab";
-import TabContext from "@mui/lab/TabContext";
-import TabList from "@mui/lab/TabList";
 import Dialog, { DialogProps } from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
@@ -20,6 +16,7 @@ import { SelectChangeEvent } from "@mui/material/Select";
 import TextField from '@mui/material/TextField';
 import {Button} from "../styleHelpers/Button";
 import {UserMenu} from "../Component/tsx/Dashboard/UserMenu"
+import { UserAlbums } from "../Component/tsx/Dashboard/UserAlbums";
 
 
 type GetUsers = ReturnType<typeof getUsers>;
@@ -80,6 +77,7 @@ const Dashboard: FC = () => {
   // Dialog menu end
   
   const handleValueFromEdit = (e: any) => {
+    console.log(typeof(e));
     if (currentUser) {
       if (name) currentUser.name = name;
       if (userName) currentUser.username = userName;
@@ -241,7 +239,6 @@ const Dashboard: FC = () => {
               <Button onClick={handleValueFromEdit}>OK</Button>
             </DialogContent>
           </Dialog>
-
           <div className="posts">
             {ownPosts?.map((post) => {
               return (
@@ -254,44 +251,8 @@ const Dashboard: FC = () => {
           </div>
           </div>
           <h2> Albums with photos:</h2>
-          <div className="test-tabs">
-            <Box sx={{ width: "100%", typography: "body1" }}>
-              <TabContext value={value}>
-                <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-                  <TabList
-                    TabIndicatorProps={{
-                      style: { backgroundColor: "white", color: "red" },
-                    }}
-                    textColor="inherit"
-                    variant="scrollable"
-                    onChange={handleChange}
-                    aria-label="Photo gallery"
-                  >
-                    {ownAlbums?.map((album) => {
-                      return <Tab label={album.title} value={album.id} />;
-                    })}
-                  </TabList>
-                </Box>
-                <div className="photos d-flex justify-content-center flex-wrap">
-                  {photo
-                    ?.filter((photo) => {
-                      return photo.albumId === Number(value);
-                    })
-                    .map((ph: Photo) => {
-                      return (
-                        <div className="photoItem">
-                          <img
-                            src={ph.thumbnailUrl}
-                            alt={ph.id.toString()}
-                          ></img>
-                        </div>
-                      );
-                    })}
-                </div>
-              </TabContext>
-            </Box>
-          </div>
-        </div>
+            <UserAlbums photo={photo} value={value} ownAlbums={ownAlbums} handleChange={handleChange}/>
+        </div>  
       </div>
     </>
   );
