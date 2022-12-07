@@ -1,6 +1,6 @@
 import Header from "../Component/tsx/Header";
 import PhotoList from "../Component/tsx/PhotoList";
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, HtmlHTMLAttributes, useEffect, useState } from "react";
 import Photo from "../Entities/Photo";
 import {Album} from "../Entities/Albums";
 import PaginationMenu from "../Component/tsx/PaginationMenu";
@@ -8,6 +8,7 @@ import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
+import { AlbumFilter } from "../Component/tsx/Feed/AlbumFilter";
 
 
 const Feed: FC = () => {
@@ -17,6 +18,7 @@ const Feed: FC = () => {
   const [singlePhoto, setsinglePhoto] = useState(0);
   const [value, setValue] = React.useState("1");
   const [photo, setPhoto] = useState<Array<Photo>>([]);
+  const [userId, setUserID] = useState(-1)
 
   const fetchData = async () => {
     const request = await fetch("https://jsonplaceholder.typicode.com/photos");
@@ -46,6 +48,22 @@ const Feed: FC = () => {
     setValue(newValue);
   };
 
+  const idHandleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const id = Number(e.target.value)
+    if(id || id >= 0) {
+      console.log(id)
+      setUserID(Number(e.target.value));
+
+      const userAlbums = albums.filter((alb) => {
+        return alb.userId === id;
+      })
+      setAlbums(userAlbums)
+
+    }
+
+  
+  };
+
   const [page, setPage] = useState(1);
   let noOfItems;
   let noOfPages = 1;
@@ -70,6 +88,7 @@ const Feed: FC = () => {
     <PhotoList items={currentPhostos} selectedPhoto={singlePhoto}/>
     <PaginationMenu page={page} pages={noOfPages} setPage={setPage} />
 
+    <AlbumFilter userId={userId} idHandleChange={idHandleChange}></AlbumFilter>
     <h2>Albums :</h2>
     <div className="test-tabs">
       <Box sx={{ width: "100%", typography: "body1" }}>
